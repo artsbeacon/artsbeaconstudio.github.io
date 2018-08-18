@@ -12,19 +12,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
   body {
-      font: 400 15px Lato, sans-serif;
+      font: 400 19px Lato, sans-serif;
       line-height: 1.8;
       color: #818181;
   }
   h2 {
-      font-size: 24px;
+      font-size: 26px;
       text-transform: uppercase;
       color: #303030;
       font-weight: 600;
       margin-bottom: 30px;
   }
+  h3 {
+    color: #303030;
+  }
   h4 {
-      font-size: 19px;
+      font-size: 20px;
       line-height: 1.375em;
       color: #303030;
       font-weight: 400;
@@ -34,10 +37,14 @@
       background-color: #fff;
       color: #333333;
       padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
+      padding-bottom: 10px;
+      /* font-family: Montserrat, sans-serif; */
   }
   .jumbotron h1 {
     display: none;
+  }
+  .jumbotron p {
+    font-size: 26px;
   }
   .jumbotron img {
     width:300px;
@@ -202,6 +209,45 @@
         font-size: 150px;
     }
   }
+  /* cards */
+  .card{
+      background-color: #FFFFFF;
+      padding:0;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius:4px;
+      box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+
+  }
+  .card:hover{
+      box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+      color:black;
+  }
+  .card img{
+      width:100%;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+  }
+  .card h4{
+      margin:20px;
+  }
+  .card p {
+      margin:20px;
+      opacity: 0.65;
+  }
+  .card p:last-child {
+      padding-bottom:20px;
+      opacity: 1;
+  }
+
+  #registerForm {
+    margin-top: 50px;
+  }
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+      background-color: #f4511e;
+}
+
   </style>
 </head>
 <body id="homePage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -221,7 +267,8 @@
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#studio">THE STUDIO</a></li>
-        <li><a href="#classes">OUR CLASSES</a></li>
+        <li><a href="#classes">CURRENT CLASSES</a></li>
+        <li><a href="#about">ABOUT JENA</a></li>
         <li><a href="#contact">CONTACT US</a></li>
       </ul>
     </div>
@@ -234,9 +281,40 @@
   <p>Arts Beacon is a creative arts studio offering classes in sculpture, drawing and painting for children, teens and adults.</p>
 </div>
 
+<div class="container-fluid">
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+        <a href="#classDetails" aria-controls="class-kids-mon"><img src="img/hands.jpg" alt="" /></a>
+        <h4>Kids and teen classes</h4>
+        <p>Monday, Wednesday and Friday options</p>
+        <p><a href="#classDetails" aria-controls="class-kids-mon" class="btn btn-lg btn-danger">Learn More</a></p>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <a href="#classDetails" aria-controls="class-adlt-dates"><img src="img/party.jpg" alt="" /></a>
+      <h4>Adult events and classes</h4>
+      <p>Parties, date night drawing and parent &amp; child</p>
+      <p><a href="#classDetails" aria-controls="class-adlt-dates" class="btn btn-lg btn-danger">Learn More</a></p>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <a href="#classDetails" aria-controls="class-adlt-dropin"><img src="img/wall.jpg" alt="" /></a>
+      <h4>A La Carte and drop in classes</h4>
+      <p>Find something that fits your schedule</p>
+      <p><a href="#classDetails" aria-controls="class-adlt-dropin" class="btn btn-lg btn-danger">Learn More</a></p>
+    </div>
+  </div>
+</div>
+
+</div>
+
 <div class="container-fluid bg-grey">
-  <h2>Subscribe to our mailing list</h2>
-  <p>Want information about studio events or classes? Sign up for our mailing list.</p>
+  <h2>Stay informed about studio events or class changes!</h2>
+  <p>Sign up for our mailing list.</p>
 
   <!-- Begin MailChimp Signup Form
   <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
@@ -261,16 +339,16 @@
   <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
   <!--End mc_embed_signup-->
 
-
 </div>
 
 <!-- Container (Studio Section) -->
 <div id="studio" class="container-fluid">
+
   <div class="row">
     <div class="col-sm-7">
-      <h2>The Studio</h2><br>
-      <h4>We are located in the Grant Park neighborhood of Atlanta, less than a mile from the Atlanta Zoo and on the soon open souther section of the Beltline.</h4><br>
-      <p>We have air conditioning and lots of windows. Parking is right next to the studio. We're in the Artists Cove section of the Beacon complex. There are restaurants, shops and bars in the complex so come and spend the whole day here.</p>
+      <h2>The Studio</h2>
+      <h4>What makes our classes different?</h4>
+      <p>Arts beacon is Jena Dost’s working artist studio. Students will get to see my work in progress and preparations for exhibitions. Our classes are offered by the semester and there will be a student exhibition at the end of each semester. My teaching philosophy is to develop creative thinking and problem solving and flexibility and resilience and developing a rich visual aesthetic. Classes will be divided by age and will be offered age appropriate materials and tools. I have a variety of materials available to my students like clay, acrylic and watercolor painting, acrylic painting, fabric, woodworking tools and supplies, plaster, collage, mixed media sculptures and paintings.  All of my students will have access to the studio tools, supplies and materials so they may gravitate to the medium that works best for their personal projects and goals. Students will be encouraged to draw from observation to learn how to see and develop a strong visual vocabulary and at the same time take a process based approach with materials to expand the possibilities of their art making.</p>
       <!-- <br><button class="btn btn-default btn-lg">Get in Touch</button> -->
     </div>
     <div class="col-sm-5">
@@ -320,30 +398,179 @@
 </div>
 
 <!-- Container (classes Section) -->
-<div id="classes" class="container-fluid text-center">
-  <h2>Classes</h2>
-  <h4>Details coming soon...</h4>
-  <br>
-  <div style="display: none;" class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-eye-open logo-small"></span>
-      <h4>CLASSES</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+<div id="classes" class="container-fluid bg-grey">
+  <h2 class="text-center">Current Classes - Registration is open</h2>
+  <div class="row text-center">
+    <div class="col-sm-6">
+      <h3>Arts Beacon Fall 2018 Semester</h3>
+      <p>Fall semester — September 12 - December 14th<br>
+      Fall break — October 8 - 12<br>
+      Thanksgiving break — November 19 - 23<br><br>
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+        Register for Fall Classes Now
+      </button>
+      </p>
+
     </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-sunglasses logo-small"></span>
-      <h4>EVENTS</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-picture logo-small"></span>
-      <h4>FINE ART</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+    <div class="col-sm-6">
+      <h3>Home School Classes Available</h3>
+      <p>Home school Tue-Thu 10-12<br>
+        offered through Grant Park Academy of the Arts<br>
+        <br><br>
+        <a href="https://grantparkarts.com/homeschool/course-listing" target="_blank" class="btn btn-danger btn-lg">Find out more on the GPAA website</a></p>
     </div>
   </div>
 
-  <h2 style="display: none;">Testimonials</h2>
-  <div style="display: none;" id="commentCarousel" class="carousel slide text-center" data-ride="carousel">
+  <div class="row" id="classDetails">
+    <br><br>
+    <h2 class="text-center">Class Details</h2>
+    <div class="col-sm-3">
+      <ul class="nav nav-pills nav-stacked" role="tablist">
+        <li role="presentation" class="active"><a href="#class-kids-mon" aria-controls="class-kids-mon" role="tab" data-toggle="tab">Kids Monday Drawing and Painting</a></li>
+        <li role="presentation"><a href="#class-kids-wed" aria-controls="class-kids-wed" role="tab" data-toggle="tab">Teen Wednesday Creative Class</a></li>
+        <li role="presentation"><a href="#class-kids-fri" aria-controls="class-kids-fri" role="tab" data-toggle="tab">Kids Friday Sculpture Class 1</a></li>
+        <li role="presentation"><a href="#class-kids-fri2" aria-controls="class-kids-fri2" role="tab" data-toggle="tab">Teen Friday Sculpture Class 2</a></li>
+        <li role="presentation"><a href="#class-kids-alacarte" aria-controls="class-kids-alacarte" role="tab" data-toggle="tab">Kids A La Carte</a></li>
+
+        <li role="presentation"><a href="#class-adlt-dates" aria-controls="class-adlt-dates" role="tab" data-toggle="tab">Adult Date Night</a></li>
+        <li role="presentation"><a href="#class-adlt-parties" aria-controls="class-adlt-parties" role="tab" data-toggle="tab">Adult Art Parties</a></li>
+        <li role="presentation"><a href="#class-adlt-sat" aria-controls="class-adlt-sat" role="tab" data-toggle="tab">Adult Saturday Parent and Child</a></li>
+        <li role="presentation"><a href="#class-adlt-dropin" aria-controls="class-adlt-dropin" role="tab" data-toggle="tab">Adult Drop In Drawing</a></li>
+        <li role="presentation"><a href="#class-adlt-dropin2" aria-controls="class-adlt-dropin2" role="tab" data-toggle="tab">Adult Drop In Clay</a></li>
+
+      </ul>
+    </div>
+    <div class="col-sm-9">
+
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="class-kids-mon">
+      <h3>Kids Drawing and Painting</h3>
+      <p>Designed for 8-12 year-olds, this is a drawing and painting class with lots of experimenting, exploration and movement. We will focus on process-based art with an emphasis in exploring materials and developing a strong visual aesthetic by experimenting with color, line, texture, and 2-D design. Students will develop confidence as artists and will learn to celebrate their artistic differences. Dress to get messy!  Students will use the studios paints, brushes, paper etc.</p>
+
+      <p>Mondays, 3:15-4:45<br>
+      Minimum enrollment: 5<br>
+      Maximum enrollment: 10<br>
+      Tuition: $200 ($20 materials fee)</p>
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+        Register Now
+      </button>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="class-kids-wed">
+
+      <h3>Teen Creative Class</h3>
+      <p>This is an all media class. Open to teens ages 13-18. This is a great class for tinkering, creative teens who love to make stuff, love to draw, paint, sculpt, and sew or are constantly making comics, board games or animations!  I will give them time, encouragement and direction to create what they invision. Each class will end with a critique time for suggestions on how to think more deeply about their project. I will help students clarify their goals and direction and help guide them to making high quality professional art.</p>
+
+      <p>Wednesday: 5:30-7:00<br>
+      Minimum enrollment: 5<br>
+      Maximum enrollment: 10<br>
+      Tuition: $220 ($30 materials fee)</p>
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+        Register Now
+      </button>
+
+        </div>
+        <div role="tabpanel" class="tab-pane" id="class-kids-fri">
+
+      <h3>Kids Sculpture Class</h3>
+      <p>This is an all media class. Open to kids ages 8-11. This is a great class for kids who love to build and make stuff. This is a process based class and we will use clay, plaster, wood, wire, paper and paint to make amazing creations! Students will develop confidence as artists and will learn to celebrate their artistic differences. Dress to get messy!  Students will use the studios sculpture supplies, brushes, glaze, paper etc.</p>
+
+      <p>age: 8-11<br>
+      Friday : 3:15-4:45<br>
+      Minimum enrollment: 5<br>
+      Maximum enrollment: 10<br>
+      Tuition: $220 ($30 materials fee)</p>
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+        Register Now
+      </button>
+
+        </div>
+        <div role="tabpanel" class="tab-pane" id="class-kids-fri2">
+
+      <h3>Teen Sculpture Class</h3>
+      <p>This is an all media class. Open to kids ages 11-14. This is a great class for kids who love to build and make stuff. This is a process based class and we will use clay, plaster, wood, wire, paper and paint to make amazing creations! Students will develop confidence as artists and will learn to celebrate their artistic differences. Dress to get messy!  Students will use the studios sculpture supplies, brushes, glaze, paper etc</p>
+      <p>age: 11-14<br>
+      Friday: 5-6:30<br>
+      Minimum enrollment: 5<br>
+      Maximum enrollment: 10<br>
+      Tuition: $220 ($30 materials fee)</p>
+
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+        Register Now
+      </button>
+
+      </div>
+      <div role="tabpanel" class="tab-pane" id="class-kids-alacarte">
+        <h3>A La Carte</h3>
+      <p>A La Carte classes are offered by appointment offered Wednesday, Friday, Saturday and Sunday. Please complete the registration form and add notes for the day you desire.</p>
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+        Register Now
+      </button>
+
+      </div>
+      <div role="tabpanel" class="tab-pane" id="class-adlt-parties">
+        <h3>Adult Private Art Parties</h3>
+      <p>Private Adult art parties available Wed, Fri, Sat, Sun by appointment 2.5 hours total 2 hours art instruction $250 for up to 10 adults bring your own food, beverages and party decorations.</p>
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+        Register Now
+      </button>
+
+      </div>
+      <div role="tabpanel" class="tab-pane" id="class-adlt-dates">
+        <h3>Date Night Drawing</h3>
+      <p>Date night drawing classes Sat 7-10PM 1 hour each by appointment $50<br>
+      There are 2 options. Option 1 - each person draws from a still life. Option 2 - one person draws while their partner models. Each couple is booked for a 1 hour drawing session. Drawing is such a great way to spend time with someone. It's intimate, it's meditative and it's creative! Bring your partner or just a friend and then go explore the Beacon complex together! No drawing experience necessary!</p>
+
+      <p>age: adults<br>
+      Friday, Saturday: 7-10 PM by appointment only<br>
+      1 hour session<br>
+      Tuition: $50</p>
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+        Register Now
+      </button>
+
+      </div>
+      <div role="tabpanel" class="tab-pane" id="class-adlt-sat">
+
+        <h3>Saturday parent and child</h3>
+        <p>All media parent and child<br>
+        Saturday drop in class for 1 parent and 1 child. $35 Each additional child is $10.<br>
+        Come play explore art making with your children. I will have clay, paint, markers, collage paper, pastels, and chalk out for you to play with. Make something with your children or make something side by side.</p>
+
+        <p>Age: 4 and up<br>
+        Saturday 10AM-12PM<br>
+        Drop in class by appointment only<br>
+        Minimum # of students 1 parent child group<br>
+        Maximum # of students 5 parent child groups<br>
+        $35 per adult and child, + $10 for additional children</p>
+        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+          Register Now
+        </button>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="class-adlt-dropin">
+              <h3>Drop in Drawing class for Adults</h3>
+              <p>3:30-5 $200 $30 material fee<br>
+              Minimum # of students 5<br>
+              Maximum # of students 10</p>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="class-adlt-dropin2">
+              <h3>Drop in Clay class for Adults</h3>
+              <p>5-6:30 $200 $30 material fee<br>
+              Minimum # of students 5<br>
+              Maximum # of students 10</p>
+
+            </div>
+          </div><!-- /tabcontent -->
+        </div> <!-- /col -->
+    </div> <!-- /row -->
+  </div>
+</div>
+
+<!-- Container (testimonials Section) -->
+<div style="display: none;" id="testimonials" class="container-fluid text-center bg-grey">
+
+  <h2>Testimonials</h2>
+  <div id="commentCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#commentCarousel" data-slide-to="0" class="active"></li>
@@ -374,6 +601,20 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-7">
+      <h2>About Jena</h2>
+      <p>Jena Dost is a working artist with 15 years of teaching experience. She holds a BFA from the Atlanta College of Art (Now SCAD) and an MFA from Queens College CUNY with majors in Sculpture and Drawing. She also completed the 2 year ceramics assistant program at Callanwolde Arts Center. She was an associate professor Brenau University and Oglethorpe University holding classes in Sculpture, Drawing, Painting, 3-D Design and Art Appreciation . She has taught classes, workshops and camps  for preschool aged children through adult students at Callanwolde, Eyedrum, The Friends School, The Ormewood School and Grant Park Co-op.</p>
+      <p><a href="http://lynoredost.com/" class="" target="_blank">See some of Jena's work at lynoredost.com</a>.</p>
+      </div>
+      <div class="col-sm-3 col-sm-offset-1">
+        <img src="img/jenaheadshot0.5x.jpg" alt="Jena Jones" class="img-responsive img-circle">
+      </div>
+    </div>
 </div>
 
 <!-- Container (Contact Section) -->
@@ -413,6 +654,94 @@
   </div>
 </div>
 
+<div id="registerForm" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Register for classes</h4>
+      </div>
+      <div class="modal-body">
+        <p>Please send the information below to register for a class. Someone will contact you shortly to complete your registration.</p>
+        <form action="https://formspree.io/jedost+formspress@gmail.com" method="POST" class="form-horizontal">
+          <div class="form-group">
+            <label for="formAddress" class="col-sm-4 control-label">Class Title / Day</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="formAddress" placeholder="Class Title / Day">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formStudent" class="col-sm-4 control-label">Artist/Student</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="formStudent" placeholder="Artist Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formAge" class="col-sm-4 control-label">Age</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="formAge" placeholder="Age">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formParent" class="col-sm-4 control-label">Parent Name</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="formParent" placeholder="Parent Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formAddress" class="col-sm-4 control-label">Address</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="formAddress" placeholder="Address">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="formAddress" class="col-sm-4 control-label">Emergency Contact</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="formAddress" placeholder="Emergency contact name and Number">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formAddress" class="col-sm-4 control-label">Home Phone</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="formAddress" placeholder="Home Phone Number">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formAddress" class="col-sm-4 control-label">Cell Phone</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="formAddress" placeholder="Cell Phone Number">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formAddress" class="col-sm-4 control-label">Name of School</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="formAddress" placeholder="Name of School">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formAddress" class="col-sm-4 control-label">Notes or Questions</label>
+            <div class="col-sm-8">
+            <textarea type="text" class="form-control" id="formAddress" placeholder="Additional Notes or Questions"></textarea>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger btn-lg">Send</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <footer class="container-fluid text-center">
   <a href="#homePage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
@@ -421,8 +750,13 @@
 
 <script>
 $(document).ready(function(){
+  //
+  // card links
+  $('.card a').on('click', function(evt){
+    $('#classDetails a[href="#'+$(this).attr('aria-controls')+'"]').tab('show')
+  })
   // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#homePage']").on('click', function(event) {
+  $(".card a, .navbar a, footer a[href='#homePage']").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
