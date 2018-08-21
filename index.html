@@ -85,11 +85,11 @@
       background-color: #f4511e;
   }
   .item h4 {
-      font-size: 19px;
+      font-size: 22px;
       line-height: 1.375em;
       font-weight: 400;
       font-style: italic;
-      margin: 70px 0;
+      margin: 30px 0 90px 0;
   }
   .item span {
       font-style: normal;
@@ -160,6 +160,7 @@
   .navbar-default .navbar-toggle {
       border-color: transparent;
       color: #fff !important;
+      background: #ddd;
   }
   footer .glyphicon {
       font-size: 20px;
@@ -536,25 +537,90 @@
             </div>
           </div><!-- /tabcontent -->
         </div> <!-- /col -->
-    </div> <!-- /row -->
-  </div>
-</div>
+    </div> <!-- /row?? -->
+  </div> <!-- /row??????? -->
+</div> <!-- /container -->
 
 <!-- Container (testimonials Section) -->
 <div id="testimonials" class="container-fluid bg-grey">
   <h2 class="text-center">Testimonials</h2>
-  <div class="row">
-    <div class="col-sm-2 col-sm-offset-2">
-      <img src="img/testimonial-adamh.jpg" class="pull-left img-responsive img-circle">
-    </div>
-    <div class="col-sm-7">
-        <h4><em>"I think I have found my inner artist using charcoal...<br>
-          I would have never known if it hadn't been for Jena. Thank you so much for hosting.<br>
-          I really had a great time last night. I'll be back for sure!!!"</em><br><br>
-          <span>Adam Hawkins</span></h4>
-    </div>
-  </div>
-</div>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="row">
+            <div class="col-sm-2 col-sm-offset-2 hidden-xs">
+              <img src="img/testimonial-adamh.jpg" class="pull-left img-responsive img-circle">
+            </div>
+            <div class="col-sm-7">
+                <h4><em>"I think I have found my inner artist using charcoal...<br>
+                  I would have never known if it hadn't been for Jena."</em><br><br>
+                  <span>Adam Hawkins</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-2 col-sm-offset-2 hidden-xs">
+              <img src="img/testimonial-cat.jpg" class="pull-left img-responsive img-circle">
+            </div>
+            <div class="col-sm-7">
+                <h4><em>"I ❤️ Arts Beacon. I don’t consider myself ‘arty’ but Jena made it awesome - her vibe of relaxed, cheerful guidance encouraged me to have a wonderful time."</em><br><br>
+                  <span>Cat Jaffin</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-2 col-sm-offset-2 hidden-xs">
+              <img src="img/testimonial-kate.jpg" class="pull-left img-responsive img-circle">
+            </div>
+            <div class="col-sm-7">
+                <h4><em>"I absolutely recommend Arts Beacon. Jena is wonderful with children, and I will not hesitate to send my own children and clients to her!"</em><br><br>
+                  <span>Kate Drummond, OTR/L</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-2 col-sm-offset-2 hidden-xs">
+              <img src="img/testimonial-stacey.jpg" class="pull-left img-responsive img-circle">
+            </div>
+            <div class="col-sm-7">
+                <h4><em>"My 50th birthday party at Arts Beacon was the best! Jena’s easygoing style of teaching made everyone feel comfortable right from the start."</em><br><br>
+                  <span>Stacey Beth Shulman</span></h4>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /carousel-inner -->
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control hidden-xs" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control hidden-xs" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div> <!-- /carousel -->
+  </div> <!-- /container -->
+
+
+
+
+
+
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
