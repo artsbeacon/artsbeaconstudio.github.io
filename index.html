@@ -19,246 +19,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-  body {
-      font: 400 19px Lato, sans-serif;
-      line-height: 1.8;
-      color: #818181;
-  }
-  h2 {
-      font-size: 26px;
-      text-transform: uppercase;
-      color: #303030;
-      font-weight: 600;
-      margin-bottom: 30px;
-  }
-  h3 {
-    color: #303030;
-  }
-  h4 {
-      font-size: 20px;
-      line-height: 1.375em;
-      color: #303030;
-      font-weight: 400;
-      margin-bottom: 30px;
-  }
-  .jumbotron {
-      background-color: #fff;
-      color: #333333;
-      padding: 100px 25px;
-      padding-bottom: 10px;
-      /* font-family: Montserrat, sans-serif; */
-  }
-  .jumbotron h1 {
-    display: none;
-  }
-  .jumbotron p {
-    font-size: 26px;
-  }
-  .jumbotron img {
-    width:300px;
-    margin-bottom: 40px;
-  }
-  .container-fluid {
-      padding: 60px 50px;
-  }
-  .bg-grey {
-      background-color: #f6f6f6;
-  }
-  .logo-small {
-      color: #f4511e;
-      font-size: 50px;
-  }
-  .logo {
-      color: #f4511e;
-      font-size: 200px;
-  }
-  .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
-  }
-  .thumbnail img {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #f4511e;
-  }
-  .carousel-indicators li {
-      border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-      background-color: #f4511e;
-  }
-  .item h4 {
-      font-size: 22px;
-      line-height: 1.375em;
-      font-weight: 400;
-      font-style: italic;
-      margin: 30px 0 90px 0;
-  }
-  .item span {
-      font-style: normal;
-  }
-  .panel {
-      border: 1px solid #f4511e;
-      border-radius:0 !important;
-      transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-      border: 1px solid #f4511e;
-      background-color: #fff !important;
-      color: #f4511e;
-  }
-  .panel-heading {
-      color: #fff !important;
-      background-color: #f4511e !important;
-      padding: 25px;
-      border-bottom: 1px solid transparent;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-      background-color: white !important;
-  }
-  .panel-footer h3 {
-      font-size: 32px;
-  }
-  .panel-footer h4 {
-      color: #aaa;
-      font-size: 14px;
-  }
-  .panel-footer .btn {
-      margin: 15px 0;
-      background-color: #f4511e;
-      color: #fff;
-  }
-  .navbar {
-      margin-bottom: 0;
-      background-color: #f4511e;
-      z-index: 9999;
-      border: 0;
-      font-size: 12px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
-  }
-  .navbar-brand img {
-    width: 110px;
-    background: white;
-    padding: 10px;
-    margin-top: -15px;
-    display: none;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #f4511e !important;
-      background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-      background: #ddd;
-  }
-  footer .glyphicon {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #f4511e;
-  }
-  .slideanim {visibility:hidden;}
-  .slide {
-      animation-name: slide;
-      -webkit-animation-name: slide;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
-      visibility: visible;
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-        font-size: 150px;
-    }
-  }
-  /* cards */
-  .card{
-      background-color: #FFFFFF;
-      padding:0;
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius:4px;
-      box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
-
-  }
-  .card:hover{
-      box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
-      color:black;
-  }
-  .card img{
-      width:100%;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-  }
-  .card h4{
-      margin:20px;
-  }
-  .card p {
-      margin:20px;
-      opacity: 0.65;
-  }
-  .card p:last-child {
-      padding-bottom:20px;
-      opacity: 1;
-  }
-
-  #registerForm {
-    margin-top: 50px;
-  }
-
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-      background-color: #f4511e;
-}
-
-  </style>
+  <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 <body id="homePage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -288,7 +49,7 @@
 <div class="jumbotron text-center">
   <img src="img/logo-full-orange.svg" alt="Arts Beacon logo" />
   <h1>Arts Beacon</h1>
-  <p>Arts Beacon is a creative arts studio offering classes in sculpture, drawing and painting for children, teens and adults.</p>
+  <p>Arts Beacon is a creative arts studio offering classes, commissions, and art consultations in sculpture, drawing and painting for children, teens and adults.</p>
 </div>
 
 <div class="container-fluid">
@@ -358,7 +119,7 @@
     <div class="col-sm-7">
       <h2>The Studio</h2>
       <h4>What makes our classes different?</h4>
-      <p>Arts beacon is Jena Dost’s working artist studio. Students will get to see my work in progress and preparations for exhibitions. Our classes are offered by the semester and there will be a student exhibition at the end of each semester. My teaching philosophy is to develop creative thinking and problem solving and flexibility and resilience and developing a rich visual aesthetic. Classes will be divided by age and will be offered age appropriate materials and tools. I have a variety of materials available to my students like clay, acrylic and watercolor painting, acrylic painting, fabric, woodworking tools and supplies, plaster, collage, mixed media sculptures and paintings.  All of my students will have access to the studio tools, supplies and materials so they may gravitate to the medium that works best for their personal projects and goals. Students will be encouraged to draw from observation to learn how to see and develop a strong visual vocabulary and at the same time take a process based approach with materials to expand the possibilities of their art making.</p>
+      <p>Arts beacon is Jena Dost’s working artist studio. Students will get to see my work in progress and preparations for exhibitions. Our classes are offered by the semester, 4 week series, workshops and drop in. My teaching philosophy is to encourage creative thinking and problem solving while teaching students to develop a rich visual aesthetic. I design projects for kids and adults with an observational and process based approach to art making. Classes will be divided by age and material and students will be offered age appropriate materials and tools. I have a variety of materials available to my students like clay, acrylic and watercolor painting, fabric, woodworking tools and supplies, plaster, collage, and mixed media sculpture supplies.  All of my students will have access to the studio tools, supplies and materials so they may gravitate to the medium that works best for their personal projects and goals. Students will be encouraged to draw from observation to learn how to see and develop a strong visual vocabulary and at the same time take a process based approach with materials to expand the possibilities of their art making.</p>
       <!-- <br><button class="btn btn-default btn-lg">Get in Touch</button> -->
     </div>
     <div class="col-sm-5">
@@ -428,13 +189,15 @@
     <h2 class="text-center">Class Details</h2>
     <div class="col-sm-3">
       <ul class="nav nav-pills nav-stacked" role="tablist">
-        <li role="presentation" class="active"><a href="#class-kids-mon" aria-controls="class-kids-mon" role="tab" data-toggle="tab">Kids Monday Drawing and Painting</a></li>
-        <li role="presentation"><a href="#class-kids-fri2" aria-controls="class-kids-fri2" role="tab" data-toggle="tab">Older Kids Friday Sculpture Class 2</a></li>
+        <li role="presentation" class="active"><a href="#class-kids-mon" aria-controls="class-kids-mon" role="tab" data-toggle="tab">Monday Drawing and Painting</a></li>
+        <li role="presentation"><a href="#class-kids-fri2" aria-controls="class-kids-fri2" role="tab" data-toggle="tab">Friday Sculpture Class</a></li>
 
-        <li role="presentation"><a href="#class-adlt-dates" aria-controls="class-adlt-dates" role="tab" data-toggle="tab">Adult Date Night Drawing</a></li>
-        <li role="presentation"><a href="#class-adlt-parties" aria-controls="class-adlt-parties" role="tab" data-toggle="tab">Adult Art Parties</a></li>
+        <li role="presentation"><a href="#class-adlt-dates" aria-controls="class-adlt-dates" role="tab" data-toggle="tab">Date Night Drawing Classes</a></li>
+        <li role="presentation"><a href="#class-adlt-mini" aria-controls="class-adlt-mini" role="tab" data-toggle="tab">October Adult Mini Series</a></li>
+
+        <li role="presentation"><a href="#class-adlt-parties" aria-controls="class-adlt-parties" role="tab" data-toggle="tab">Adult Private Art Parties</a></li>
         <li role="presentation"><a href="#class-lessons" aria-controls="class-lessons" role="tab" data-toggle="tab">Private Lessons</a></li>
-        <li role="presentation"><a href="#class-commissions" aria-controls="class-commissions" role="tab" data-toggle="tab">Commissions</a></li>
+        <li role="presentation"><a href="#class-commissions" aria-controls="class-commissions" role="tab" data-toggle="tab">Commissions and Fine Art</a></li>
 
       </ul>
     </div>
@@ -442,22 +205,22 @@
 
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="class-kids-mon">
-      <h3>Kids Drawing and Painting</h3>
-      <p>Designed for 8-12 year-olds, this is a drawing and painting class with lots of experimenting, exploration and movement. We will focus on process-based art with an emphasis in exploring materials and developing a strong visual aesthetic by experimenting with color, line, texture, and 2-D design. Students will develop confidence as artists and will learn to celebrate their artistic differences. Dress to get messy!  Students will use the studios paints, brushes, paper etc.</p>
+      <h3>Monday Drawing and Painting</h3>
+      <p>Designed for 7-12 year-olds, this is a drawing and painting class with lots of experimenting, exploration and movement. We will focus on process-based art with an emphasis in exploring materials and developing a strong visual aesthetic by experimenting with color, line, texture, and 2-D design. Students will develop confidence as artists and will learn to celebrate their artistic differences. Dress to get messy!  Students will use the studios paints, brushes, paper etc.</p>
 
       <p>Mondays, 3:15-4:45<br>
-      Tuition: $220 (includes materials fee)</p>
+      Tuition: $25 per class</p>
       <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
         Register Now
       </button>
         </div>
         <div role="tabpanel" class="tab-pane" id="class-kids-fri2">
 
-      <h3>Older Kids Sculpture Class</h3>
-      <p>This is an all media class. Open to kids ages 11-14. This is a great class for kids who love to build and make stuff. This is a process based class and we will use clay, plaster, wood, wire, paper and paint to make amazing creations! Students will develop confidence as artists and will learn to celebrate their artistic differences. Dress to get messy!  Students will use the studios sculpture supplies, brushes, glaze, paper etc</p>
+      <h3>Friday Sculpture Class</h3>
+      <p>This is an all media class. Open to kids ages 12 and up. This is a great class for kids who love to build and make stuff. This is a process based class and we will use clay, plaster, wood, wire, paper and paint to make amazing creations! Students will develop confidence as artists and will learn to celebrate their artistic differences. Dress to get messy!  Students will use the studios sculpture supplies, brushes, glaze, paper etc.</p>
       <p>Age: 11-14<br>
       Friday: 5-6:30<br>
-      Tuition: $250 (includes materials fee)</p>
+      Tuition: $35 per class</p>
 
       <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
         Register Now
@@ -466,9 +229,9 @@
       </div>
       <div role="tabpanel" class="tab-pane" id="class-adlt-parties">
         <h3>Adult Private Art Parties</h3>
-        <p>Private Adult art parties available Wed, Fri, Sat, Sun by appointment<br>
+        <p>Private Adult art parties available Tues, Fri and Sun by appointment<br>
         2.5 hours total with 2 hours art instruction<br>
-        $250 for up to 10 adults<br>
+        $250 for up to 12 adults<br>
         bring your own food, beverages and party decorations.</p>
       <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
         Register Now
@@ -476,23 +239,46 @@
 
       </div>
       <div role="tabpanel" class="tab-pane" id="class-adlt-dates">
-        <h3>Date Night Drawing</h3>
-      <p>Date night drawing classes Sat 7-10PM 1 hour each by appointment $50<br>
-      There are 2 options. Option 1 - each person draws from a still life. Option 2 - one person draws while their partner models. Each couple is booked for a 1 hour drawing session. Drawing is such a great way to spend time with someone. It's intimate, it's meditative and it's creative! Bring your partner or just a friend and then go explore the Beacon complex together! No drawing experience necessary!</p>
+        <h3>Date Night Drawing Classes</h3>
+      <p><b>Date night drawing classes Sat 8-10 PM drop in $35</b><br>
+      Drawing is such a great way to spend time with someone. It's intimate, it's meditative and it's creative! You and your partner will be led through drawing exercises together and will discover how you see things differently! Bring your partner or just a friend and then go explore the Beacon complex together! No drawing experience necessary!</p>
 
-      <p>Age: adults<br>
-      Friday, Saturday: 7-10 PM by appointment only<br>
+      <p>Age: 16-Adult<br>
+      Saturday: drop in between 8-10 PM<br>
       1 hour session<br>
-      Tuition: $50</p>
+      Tuition: $35 per couple</p>
       <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
         Register Now
       </button>
 
       </div>
+      <div role="tabpanel" class="tab-pane" id="class-adlt-mini">
+        <h3>Mini Series for Adults - 4 Wednesdays Recurring</h3>
+        <p><b>Drawing and Clay class for Adults Wed 7-9PM $140 for 4 classes</b><br>
+        Great classes for people who are short on time but want to develop their artistic abilities while doing something fun, creative, meditative, challenging and rewarding.</p>
+        <p>October Theme - Día de Muertos Clay skulls<br>
+          October 3rd, 10th, 17th and 24th</p>
+
+<p>November Theme - Ornaments/ gifts<br>
+November 7th, 14th, 28th and December 5th</p>
+
+<p>January Theme - Portraits<br>
+January 9th, 16th, 23rd and 30th</p>
+
+
+        <p>Age: 16-Adult<br>
+        Saturday: drop in between 8-10 PM<br>
+        1 hour session<br>
+        Tuition: $35 per couple</p>
+        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
+          Register Now
+        </button>
+      </div>
             <div role="tabpanel" class="tab-pane" id="class-lessons">
               <h3>Private Lessons</h3>
-              <p>If you are interested in private art instruction for yourself or your child please get in touch!<br>
-              Jena would love to work with you.</p>
+              <p>I offer private lessons for children and adults on Tuesday from 10 AM-7PM. For adults with or without art making experience tell me what you want to create and we will work toward that goal! For children and homeschool students we will first work on observational drawing and developing a visual vocabulary and then scaffold the weekly classes to meet your long term goal established by the student, parent and teacher. Do you need to develop a portfolio for college admissions? Sign up for private lessons and I will help you make your best portfolio presentation!<br>
+              Cost is $40 per 1 hour lesson<br>
+              Or $420 for 12 weeks</p>
 
               <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
                 Request Information
@@ -501,8 +287,15 @@
             </div>
             <div role="tabpanel" class="tab-pane" id="class-commissions">
               <h3>Commissions and Fine Art</h3>
-              <p>If you are interested in commissioning a portrait or other custom work of art from Jena please get in touch!
-                <br>She would love to hear your idea.</p>
+              <p><b>Art consultation</b> - Let me help you get the art you need for your home or business. I might even inspire and show you how to make it yourself! Please contact me for rates<br>
+Commissions - varied by medium and size please contact me for more info.<br>
+Portraits - I want you to model for me! Part of my artist mission is to sculpt everyday people in the city.  Even if you don’t want to buy it come have a little portrait made. Contact me to set up an appointment!<br>
+Miniature portrait bust $75<br>
+Full body portraits <br>
+Small $850 <br>
+Medium $1200<br>
+Large $1500
+</p>
 
               <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#registerForm">
                 Request Information
@@ -670,10 +463,11 @@
             <label for="formClass" class="col-sm-4 control-label">Class / Request</label>
             <div class="col-sm-8">
             <select class="form-control" id="formClass" name="formClass">
-              <option value="class-kids-mon">Kids Monday Drawing and Painting</option>
-              <option value="class-kids-fri2">Older Kids Friday Sculpture Class 2</option>
+              <option value="class-kids-mon">Monday Drawing and Painting</option>
+              <option value="class-kids-fri2">Friday Sculpture Class 2</option>
 
               <option value="class-adlt-dates">Adult Date Night Drawing</option>
+              <option value="class-adlt-mini">Mini series for adults</option>
               <option value="class-adlt-parties">Adult Art Parties</option>
               <option value="class-lessons">Private Lessons</option>
               <option value="class-commissions">Commissions</option>
@@ -764,65 +558,7 @@
   </a>
 </footer>
 
-<script>
-$(document).ready(function(){
-  //
-  // card links
-  $('.card a').on('click', function(evt){
-    $('#classDetails a[href="#'+$(this).attr('aria-controls')+'"]').tab('show')
-  })
-  // form controls
-  function hideShowFields(classId){
-    if(classId.indexOf('kids') > -1){
-      $('#childFields').slideDown()
-    } else {
-      $('#childFields').slideUp()
-    }
-  }
-  $('#classDetails .tab-pane button').on('click', function(evt){
-    var $par = $(this).closest('.tab-pane')
-    var classId = $par.attr('id')
-    $('#formClass').val(classId)
-    hideShowFields(classId)
-  })
-  $('#formClass').on('change', function(evt){
-    var classId = $(this).val()
-    hideShowFields(classId)
-  })
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".card a, .navbar a, footer a[href='#homePage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-})
-</script>
+<script src="scripts.js"></script>
 
 </body>
 </html>
