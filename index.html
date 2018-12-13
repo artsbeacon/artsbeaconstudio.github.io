@@ -62,7 +62,7 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="card">
-          <a href="#classDetails" aria-controls="class-kids-mon"><img src="img/hands.jpg" alt="" /></a>
+          <a href="#classDetails" aria-controls="class-kids-mon"><img src="img/paints-card.jpg" alt="" /></a>
           <h4>Kids and teen classes</h4>
           <p>Monday, Friday and Saturday options</p>
           <p><a href="#classDetails" aria-controls="class-kids-mon" class="btn btn-lg btn-danger">Learn More</a></p>
@@ -70,7 +70,7 @@
       </div>
       <div class="col-sm-4">
         <div class="card">
-          <a href="#classDetails" aria-controls="class-adlt-partner"><img src="img/party.jpg" alt="" /></a>
+          <a href="#classDetails" aria-controls="class-adlt-partner"><img src="img/events-card.jpg" alt="" /></a>
           <h4>Adult events and classes</h4>
           <p>Classes, parties and partner drawing</p>
           <p><a href="#classDetails" aria-controls="class-adlt-partner" class="btn btn-lg btn-danger">Learn More</a></p>
@@ -78,7 +78,7 @@
       </div>
       <div class="col-sm-4">
         <div class="card">
-          <a href="#classDetails" aria-controls="class-lessons"><img src="img/wall.jpg" alt="" /></a>
+          <a href="#classDetails" aria-controls="class-lessons"><img src="img/buddas-card.jpg" alt="" /></a>
           <h4>Private lessons and commissions</h4>
           <p>Be creative. Jena will work with you!</p>
           <p><a href="#classDetails" aria-controls="class-lessons" class="btn btn-lg btn-danger">Learn More</a></p>
@@ -226,11 +226,29 @@
           <li role="presentation"><a href="#class-adlt-parties" aria-controls="class-adlt-parties" role="tab" data-toggle="tab">Adult Private Art Parties</a></li>
           <li role="presentation"><a href="#class-lessons" aria-controls="class-lessons" role="tab" data-toggle="tab">Private Lessons</a></li>
           <li role="presentation"><a href="#class-commissions" aria-controls="class-commissions" role="tab" data-toggle="tab">Commissions and Fine Art</a></li>
-
         </ul>
       </div>
       <div class="col-sm-9">
-
+        <div id="classListDropdown" class="dropdown">
+          <button id="classListDropdownLabel" class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Monday Cartooning and Claymation
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="classListDropdownLabel">
+            <li><a href="#class-kids-cartoon">Monday Cartooning and Claymation</a></li>
+            <li><a href="#class-kids-mon">Monday Drawing and Painting</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#class-kids-fri2">Friday Sculpture and Drawing Class</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#class-kids-adlt">Saturday Parent and Child Art</a></li>
+            <li><a href="#class-adlt-clay">Saturday Clay / Handbuilding</a></li>
+            <li><a href="#class-adlt-partner">Saturday Partner Drawing Classes</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#class-adlt-parties">Adult Private Art Parties</a></li>
+            <li><a href="#class-lessons">Private Lessons</a></li>
+            <li><a href="#class-commissions">Commissions and Fine Art</a></li>
+          </ul>
+        </div> 
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="class-kids-cartoon">
             <h3>Monday Cartooning and Claymation</h3>
@@ -488,7 +506,7 @@
         <script async defer src="//www.instagram.com/embed.js"></script>
       </div>
       <div class="col-sm-4 col-sm-offset-2">
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fartsbeacon%2Fposts%2F2645597512332167&width=500" width="500" height="669" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
+        <iframe id="facebook-frame" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fartsbeacon%2Fposts%2F2645597512332167&width=500" width="500" height="669" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
           allow="encrypted-media"></iframe>
       </div>
     </div>

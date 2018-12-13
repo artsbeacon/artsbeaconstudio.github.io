@@ -1,5 +1,12 @@
 $(document).ready(function(){
-  //
+  // dropdown for class list for mobile 
+  var $tabContent = $('#classDetails .tab-pane')
+  $('#classListDropdown .dropdown-menu a').on('click', function (evt) {
+    $('#classListDropdownLabel').html($(this).text() + ' <span class="caret"></span>')
+    $('#classDetails .nav.nav-pills a[href="'+$(this).attr('href')+'"]').tab('show')
+    evt.preventDefault()
+  })
+
   // card links
   $('.card a').on('click', function(evt){
     $('#classDetails a[href="#'+$(this).attr('aria-controls')+'"]').tab('show')

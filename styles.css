@@ -1,3 +1,11 @@
+/*
+#94536d
+#909577
+#63656f
+#8a9fb6
+#d9be74
+*/
+
 body {
     font: 400 19px Lato, sans-serif;
     line-height: 1.8;
@@ -23,17 +31,37 @@ h4 {
 .jumbotron {
     background-color: #fff;
     color: #333333;
-    padding: 100px 25px;
+    padding: 150px 25px;
     padding-bottom: 10px;
     /* font-family: Montserrat, sans-serif; */
+    background-image: url(photos/IMG_20180910_153946.jpg);
+    /*
+    background-image: url(photos/IMG_20181203_155434.jpg);
+    background-image: url(photos/IMG_20181023_154128.jpg);
+    background-image: url(photos/IMG_20181019_180828.jpg);
+    */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #efefef;
+    color: #fff;
+    padding-bottom: 200px;
 }
+
 .jumbotron h1 {
-  display: none;
+  background-color: #0077aa;
+      display: inline-block;
+      padding: 2px 15px;
 }
 .jumbotron p {
   font-size: 26px;
+  background-color: rgba(244, 81, 30, 0.7);
+  display: inline;
+  padding: 7px 10px;
 }
 .jumbotron img {
+      display: none;
   width:300px;
   margin-bottom: 40px;
 }
@@ -182,6 +210,11 @@ footer .glyphicon {
     -webkit-transform: translateY(0%);
   }
 }
+
+#classListDropdown {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .col-sm-4 {
     text-align: center;
@@ -191,10 +224,23 @@ footer .glyphicon {
       width: 100%;
       margin-bottom: 35px;
   }
+  #classDetails .nav.nav-pills {
+    display: none;
+  }
+  #classListDropdown {
+    display: block;
+  }  
 }
+
 @media screen and (max-width: 480px) {
+  .jumbotron h1 {
+    font-size: 48px;
+  }
   .logo {
       font-size: 150px;
+  }
+  #facebook-frame {
+    display: none;
   }
 }
 /* cards */
