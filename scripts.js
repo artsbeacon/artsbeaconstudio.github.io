@@ -2,7 +2,7 @@ $(document).ready(function(){
   // dropdown for class list for mobile 
   var $tabContent = $('#classDetails .tab-pane')
   $('#classListDropdown .dropdown-menu a').on('click', function (evt) {
-    $('#classListDropdownLabel').html($(this).text() + ' <span class="caret"></span>')
+    //$('#classListDropdownLabel').html($(this).text() + ' <span class="caret"></span>')
     $('#classDetails .nav.nav-pills a[href="'+$(this).attr('href')+'"]').tab('show')
     evt.preventDefault()
   })
