@@ -1,6 +1,10 @@
 /*
+pink
+#f53ba2
+rgba(245, 59, 162, 0.7)
+
 purpur 
-#6c15bb
+#f53ba2
 //
 #f4511e
 // #f4511e
@@ -16,8 +20,8 @@ purpur
 
 .btn-danger {
     color: #fff;
-    background-color: #6c15bb;
-    border-color: #6c15bb;
+    background-color: #f53ba2;
+    border-color: #f53ba2;
 }
 .btn-danger:hover {
     background-color: #4f0294;
@@ -25,12 +29,12 @@ purpur
 }
 .btn-primary {
     color: #fff;
-    background-color: #f4511e;
-    border-color: #f4511e;
+    background-color: #ff008d;
+    border-color: #ff008d;
 }
 .btn-primary:hover {
-    background-color: #b92c00;
-    border-color: #b92c00;
+    background-color: #4f0294;
+    border-color: #4f0294;
 }
 
 body {
@@ -72,7 +76,7 @@ h4 {
 }
 
 .jumbotron h1 {
-  background-color: #f4511e;
+  background-color: #ff008d;
       display: inline-block;
       padding: 2px 15px;
 }
@@ -81,7 +85,7 @@ h4 {
    margin: 40px auto;
 }
 .jumbotron p.info {
-  background-color: rgba(108, 21, 187, 0.7);
+  background-color: rgba(245, 59, 162, 0.7);
   display: inline;
   padding: 7px 10px;
 }
@@ -97,11 +101,11 @@ h4 {
     background-color: #f6f6f6;
 }
 .logo-small {
-    color: #6c15bb;
+    color: #f53ba2;
     font-size: 50px;
 }
 .logo {
-    color: #6c15bb;
+    color: #f53ba2;
     font-size: 200px;
 }
 .thumbnail {
@@ -116,13 +120,13 @@ h4 {
 }
 .carousel-control.right, .carousel-control.left {
     background-image: none;
-    color: #6c15bb;
+    color: #f53ba2;
 }
 .carousel-indicators li {
-    border-color: #6c15bb;
+    border-color: #f53ba2;
 }
 .carousel-indicators li.active {
-    background-color: #6c15bb;
+    background-color: #f53ba2;
 }
 .item h4 {
     font-size: 22px;
@@ -135,7 +139,7 @@ h4 {
     font-style: normal;
 }
 .panel {
-    border: 1px solid #6c15bb;
+    border: 1px solid #f53ba2;
     border-radius:0 !important;
     transition: box-shadow 0.5s;
 }
@@ -143,13 +147,13 @@ h4 {
     box-shadow: 5px 0px 40px rgba(0,0,0, .2);
 }
 .panel-footer .btn:hover {
-    border: 1px solid #6c15bb;
+    border: 1px solid #f53ba2;
     background-color: #fff !important;
-    color: #6c15bb;
+    color: #f53ba2;
 }
 .panel-heading {
     color: #fff !important;
-    background-color: #6c15bb !important;
+    background-color: #f53ba2 !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;
@@ -169,12 +173,12 @@ h4 {
 }
 .panel-footer .btn {
     margin: 15px 0;
-    background-color: #6c15bb;
+    background-color: #f53ba2;
     color: #fff;
 }
 .navbar {
     margin-bottom: 0;
-    background-color: #6c15bb;
+    background-color: #f53ba2;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -194,18 +198,18 @@ h4 {
   display: none;
 }
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #6c15bb !important;
+    color: #f53ba2 !important;
     background-color: #fff !important;
 }
 .navbar-default .navbar-toggle {
     border-color: transparent;
     color: #fff !important;
-    background: #ddd;
+    background: #000;
 }
 footer .glyphicon {
     font-size: 20px;
     margin-bottom: 20px;
-    color: #6c15bb;
+    color: #f53ba2;
 }
 .slideanim {visibility:hidden;}
 .slide {
@@ -304,5 +308,5 @@ footer .glyphicon {
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-    background-color: #6c15bb;
+    background-color: #f53ba2;
 }
