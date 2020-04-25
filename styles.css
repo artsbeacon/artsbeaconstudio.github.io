@@ -59,33 +59,30 @@ h4 {
     font-weight: 400;
 }
 .jumbotron {
-    background-color: #fff;
-    color: #333333;
     padding: 150px 25px;
     padding-bottom: 10px;
+    /*
     background-image: url(img/IMG_20180910_153946.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*
-    background-attachment: fixed;
     */
-    background-color: #efefef;
+    background-color: rgba(0,0,0, 1);
     color: #fff;
     padding-bottom: 200px;
 }
 
 .jumbotron h1 {
-  background-color: #de02d8;
-      display: inline-block;
-      padding: 2px 15px;
+  /* background-color: #de02d8;
+  display: inline-block; */
+  padding: 2px 15px;
 }
 .jumbotron p {
   font-size: 26px;
    margin: 40px auto;
 }
 .jumbotron p.info {
-  background-color: rgba(214, 69, 210, 0.7);
+  /* background-color: rgba(214, 69, 210, 0.7);  */
   display: inline;
   padding: 7px 10px;
 }
