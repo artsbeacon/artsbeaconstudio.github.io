@@ -59,17 +59,53 @@ h4 {
     font-weight: 400;
 }
 .jumbotron {
-    padding: 150px 25px;
-    padding-bottom: 10px;
-    /*
-    background-image: url(photos/summer-kids.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    */
-    background-color: rgba(0,0,0, 1);
-    color: #fff;
-    padding-bottom: 200px;
+  padding: 150px 25px;
+  padding-bottom: 10px;
+  padding-bottom: 200px;
+}
+
+.jumbotron.hands {
+  background-color: #fff;
+  color: #fff;
+  background-image: url(img/hands.jpg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.jumbotron.hands h1 {
+  background-color: #de02d8;
+  display: inline-block;
+}
+.jumbotron.hands p.info {
+  background-color: rgba(214, 69, 210, 0.7);
+}
+
+.jumbotron.wall {
+  background-color: #fff;
+  color: #fff;
+  background-image: url(img/wall.jpg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.jumbotron.wall h1 {
+  background-color: #de02d8;
+  display: inline-block;
+}
+.jumbotron.wall p.info {
+  background-color: rgba(214, 69, 210, 0.7);
+}
+
+.jumbotron.fuji {
+  background-color: #fff;
+  color: #000;
+  background-image: url(img/fuji.jpg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.jumbotron.fuji p {
+  font-weight: 400;
 }
 
 .jumbotron h1 {
