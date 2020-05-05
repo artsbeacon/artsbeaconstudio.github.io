@@ -62,7 +62,7 @@ h4 {
     padding: 150px 25px;
     padding-bottom: 10px;
     /*
-    background-image: url(img/IMG_20180910_153946.jpg);
+    background-image: url(photos/summer-kids.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -96,6 +96,10 @@ h4 {
 }
 .bg-grey {
     background-color: #f6f6f6;
+}
+.bg-black {
+  background-color: #000000;
+  color: #fff;
 }
 .logo-small {
     color: #d645d2;
@@ -216,6 +220,13 @@ footer .glyphicon {
     -webkit-animation-duration: 1s;
     visibility: visible;
 }
+
+.announcement p {
+  margin: 0 0 30px;
+  line-height: 1.5em;
+  font-size: 22px;
+}
+
 @keyframes slide {
   0% {
     opacity: 0;
