@@ -5,6 +5,7 @@ const artsbeacon = css`
     color: #fff;
     background-color: #d645d2;
     border-color: #d645d2;
+    font-size: 1rem;
   }
   .btn-danger:hover {
     background-color: #4f0294;
@@ -14,6 +15,7 @@ const artsbeacon = css`
     color: #fff;
     background-color: #de02d8;
     border-color: #de02d8;
+    font-size: 1.1rem;
   }
   .btn-primary:hover {
     background-color: #4f0294;
@@ -59,7 +61,7 @@ const artsbeacon = css`
     background-color: #de02d8;
     display: inline-block;
   }
-  .jumbotron.hands p.info {
+  .jumbotron.hands .info p {
     background-color: rgba(214, 69, 210, 0.7);
   }
 
@@ -75,7 +77,7 @@ const artsbeacon = css`
     background-color: #de02d8;
     display: inline-block;
   }
-  .jumbotron.wall p.info {
+  .jumbotron.wall .info p {
     background-color: rgba(214, 69, 210, 0.7);
   }
 
@@ -100,7 +102,7 @@ display: inline-block; */
     font-size: 26px;
     margin: 40px auto;
   }
-  .jumbotron p.info {
+  .jumbotron .info p {
     /* background-color: rgba(214, 69, 210, 0.7);  */
     display: inline;
     padding: 7px 10px;
@@ -196,38 +198,6 @@ display: inline-block; */
     margin: 15px 0;
     background-color: #d645d2;
     color: #fff;
-  }
-  .navbar {
-    margin-bottom: 0;
-    background-color: #d645d2;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-    font-family: Montserrat, sans-serif;
-  }
-  .navbar li a,
-  .navbar .navbar-brand {
-    color: #fff !important;
-  }
-  .navbar-brand img {
-    width: 110px;
-    background: white;
-    padding: 10px;
-    margin-top: -15px;
-    display: none;
-  }
-  .navbar-nav li a:hover,
-  .navbar-nav li.active a {
-    color: #d645d2 !important;
-    background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-    background: #000;
   }
   footer .glyphicon {
     font-size: 20px;
@@ -327,7 +297,7 @@ display: inline-block; */
     margin: 20px;
   }
   .card p {
-    margin: 20px;
+    margin: 20px 0;
     opacity: 0.65;
   }
   .card p:last-child {

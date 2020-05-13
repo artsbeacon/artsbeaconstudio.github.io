@@ -40,9 +40,9 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
         node={prismicPost}
         article
       />
+      <Header />
       <Hero>
         <Wrapper>
-          <Header />
           <Headline>
             {data.date} — {categories && <Categories categories={categories} />}
           </Headline>

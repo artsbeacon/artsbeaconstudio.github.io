@@ -10,9 +10,8 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Carousel from 'react-bootstrap/Carousel'
 import Image from 'react-bootstrap/Image'
-import { Navbar, Nav } from 'react-bootstrap'
 
-import { Layout, Listing, Wrapper, Title } from '../components'
+import { Layout, Header, Listing, Wrapper, Title } from '../components'
 import website from '../../config/website'
 
 const Social = styled.ul`
@@ -64,6 +63,10 @@ const ProjectListing = styled.ul`
   }
 `
 
+const JumboTitle = styled.h1`
+  font-size: 63px;
+`
+
 const IndexWrapper = Wrapper.withComponent('main')
 
 // TODO break this all out into components
@@ -79,21 +82,10 @@ class Index extends Component {
     } = this.props
     return (
       <Layout>
-        <Navbar>
-          <Navbar.Brand href="#homePage">Arts Beacon</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#studio">THE STUDIO</Nav.Link>
-              <Nav.Link href="#classes">CURRENT CLASSES</Nav.Link>
-              <Nav.Link href="#about">ABOUT JENA</Nav.Link>
-              <Nav.Link href="#contact">CONTACT US</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-        <Jumbotron>
-          <h1>{homepage.data.title.text}</h1>
-          <p dangerouslySetInnerHTML={{ __html: homepage.data.content.html }} />
+        <Header />
+        <Jumbotron id="homePage" className="fuji text-center">
+          <JumboTitle>{homepage.data.title.text}</JumboTitle>
+          <div className="info" dangerouslySetInnerHTML={{ __html: homepage.data.content.html }} />
           <p>
             <Button size="lg" href="#classes">
               ONLINE SUMMER CLASSES
@@ -140,7 +132,7 @@ class Index extends Component {
             </Col>
           </Row>
         </Container>
-        <Container fluid className="bg-gray">
+        <Container fluid className="bg-grey">
           <h2>Stay informed about studio events or class changes!</h2>
           <p>Sign up for our mailing list.</p>
           <h2>TODO add mailchimp react safe version</h2>
@@ -275,6 +267,7 @@ class Index extends Component {
           </Row>
         </Container>
         <Container id="testimonials" fluid className="bg-grey">
+          <h2 className="text-center">TESTIMONIALS</h2>
           <Carousel>
             <Carousel.Item>
               <Image src="img/testimonial-adamh.jpg" className="pull-left" roundedCircle />
@@ -370,7 +363,7 @@ class Index extends Component {
                   <Col sm="6" className="form-group">
                     <input className="form-control" id="name" name="name" placeholder="Name" type="text" required />
                   </Col>
-                  <Col sm="6" class="form-group">
+                  <Col sm="6" className="form-group">
                     <input className="form-control" id="email" name="email" placeholder="Email" type="email" required />
                   </Col>
                 </Row>

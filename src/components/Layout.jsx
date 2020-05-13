@@ -11,7 +11,7 @@ import '@reach/skip-nav/styles.css'
 import Footer from './Footer'
 import SEO from './SEO'
 import SkipNavLink from './SkipNavLink'
-import { theme, reset, artsbeacon } from '../styles'
+import { theme, artsbeacon } from '../styles'
 
 // import 'typeface-lora'
 // import 'typeface-source-sans-pro'
@@ -19,7 +19,6 @@ import { theme, reset, artsbeacon } from '../styles'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const globalStyle = css`
-  ${reset}
   ${artsbeacon}
 `
 

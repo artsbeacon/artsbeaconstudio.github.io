@@ -40,6 +40,21 @@ module.exports = {
         htmlSerializer: () => prismicHtmlSerializer,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Lato`,
+            subsets: [`latin`],
+          },
+        ],
+      },
+    },
     'gatsby-plugin-lodash',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
