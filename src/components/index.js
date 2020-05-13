@@ -6,5 +6,7 @@ import SliceZone from './SliceZone'
 import Title from './Title'
 import Layout from './Layout'
 import Wrapper from './Wrapper'
+import Mailchimp from './Mailchimp'
+import Testimonial from './Testimonial'
 
-export { Footer, Layout, Listing, SEO, Wrapper, SliceZone, Title, Header }
+export { Footer, Layout, Listing, SEO, Wrapper, SliceZone, Title, Header, Mailchimp, Testimonial }

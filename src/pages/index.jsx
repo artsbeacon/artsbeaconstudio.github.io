@@ -10,8 +10,9 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Carousel from 'react-bootstrap/Carousel'
 import Image from 'react-bootstrap/Image'
+import Collapse from 'react-bootstrap/Collapse'
 
-import { Layout, Header, Listing, Wrapper, Title } from '../components'
+import { Layout, Header, Mailchimp, Listing, Wrapper, Title, Testimonial } from '../components'
 import website from '../../config/website'
 
 const Social = styled.ul`
@@ -68,6 +69,13 @@ const JumboTitle = styled.h1`
 `
 
 const IndexWrapper = Wrapper.withComponent('main')
+
+// TODO fix this to use state
+// const [open, setOpen] = useState(false)
+let open = false
+const setOpen = () => {
+  open = !open
+}
 
 // TODO break this all out into components
 // TODO dynamic data!
@@ -133,9 +141,10 @@ class Index extends Component {
           </Row>
         </Container>
         <Container fluid className="bg-grey">
-          <h2>Stay informed about studio events or class changes!</h2>
-          <p>Sign up for our mailing list.</p>
-          <h2>TODO add mailchimp react safe version</h2>
+          <Mailchimp>
+            <h2>Stay informed about studio events or class changes!</h2>
+            <p>Sign up for our mailing list.</p>
+          </Mailchimp>
         </Container>
         <Container id="studio" fluid>
           <Row>
@@ -194,42 +203,43 @@ class Index extends Component {
                 Session 2 is from July 6th-July 31st. If a class time doesn't work for you we can record the classes and
                 send you the information to access the classes on your time schedule.
               </p>
-              <div className="collapse" id="summerExtended">
-                <p>
-                  We have designed our classes to work with one media type to simplify the supply list and keep the cost
-                  low.
-                </p>
-                <p>
-                  In addition, we will be providing free art making videos on Facebook and Instagram for anyone who
-                  needs a little distraction for the kids or a dose of inspiration for themselves. Our goal for this
-                  summer is to help you all find meaningful activities to connect to yourself, your family and your
-                  environment.
-                </p>
-                <p>
-                  Art making is tactile and grounds you in the moment and provides a working meditation that can really
-                  lift your spirit. We believe that anyone and everyone has the ability to draw and to make great art no
-                  matter your age or training. Our teaching philosophy is to encourage creative thinking and problem
-                  solving while teaching students to develop a rich visual aesthetic.
-                </p>
-                <p>
-                  We design projects for kids and adults with an observational and process based approach to art making.
-                  Students will be encouraged to draw from observation to learn how to see and develop a strong visual
-                  vocabulary and at the same time take a process based approach with materials to expand the
-                  possibilities of their art making.
-                </p>
-                <p>Be well, stay safe and make art!</p>
-                <p className="cite">— Jena and the Arts Beacon team</p>
-              </div>
-              <a
-                className="btn btn-small btn-primary"
-                role="button"
-                data-toggle="collapse"
+              <Collapse in={open}>
+                <div id="summerExtended">
+                  <p>
+                    We have designed our classes to work with one media type to simplify the supply list and keep the
+                    cost low.
+                  </p>
+                  <p>
+                    In addition, we will be providing free art making videos on Facebook and Instagram for anyone who
+                    needs a little distraction for the kids or a dose of inspiration for themselves. Our goal for this
+                    summer is to help you all find meaningful activities to connect to yourself, your family and your
+                    environment.
+                  </p>
+                  <p>
+                    Art making is tactile and grounds you in the moment and provides a working meditation that can
+                    really really lift your spirit. We believe that anyone and everyone has the ability to draw and to
+                    make matter your age or training. Our teaching philosophy is to encourage creative thinking and
+                    problem solving while teaching students to develop a rich visual aesthetic.
+                  </p>
+                  <p>
+                    We design projects for kids and adults with an observational and process based approach to art
+                    making. Students will be encouraged to draw from observation to learn how to see and develop a
+                    strong visual vocabulary and at the same time take a process based approach with materials to expand
+                    the possibilities of their art making.
+                  </p>
+                  <p>Be well, stay safe and make art!</p>
+                  <p className="cite">— Jena and the Arts Beacon team</p>
+                </div>
+              </Collapse>
+              <Button
+                onClick={() => setOpen(!open)}
                 href="#summerExtended"
-                aria-expanded="false"
                 aria-controls="summerExtended"
+                aria-expanded={open}
+                size="sm"
               >
                 Read more
-              </a>
+              </Button>
             </div>
           </div>
           <Row className="text-center">
@@ -270,45 +280,28 @@ class Index extends Component {
           <h2 className="text-center">TESTIMONIALS</h2>
           <Carousel>
             <Carousel.Item>
-              <Image src="img/testimonial-adamh.jpg" className="pull-left" roundedCircle />
-              <h4>
-                <em>
-                  "I think I have found my inner artist using charcoal...
-                  <br />
-                  <br />I would have never known if it hadn't been for Jena."
-                </em>
-                <span>Adam Hawkins</span>
-              </h4>
+              <Testimonial img="img/testimonial-adamh.jpg" cite="Adam Hawkins">
+                I think I have found my inner artist using charcoal...
+                <br />I would have never known if it hadn't been for Jena.
+              </Testimonial>
             </Carousel.Item>
             <Carousel.Item>
-              <Image src="img/testimonial-cat.jpg" className="pull-left" roundedCircle />
-              <h4>
-                <em>
-                  "I ❤️ Arts Beacon. I don’t consider myself ‘arty’ but Jena made it awesome - her vibe of relaxed,
-                  cheerful guidance encouraged me to have a wonderful time."
-                </em>
-                <span>Cat Jaffin</span>
-              </h4>
+              <Testimonial img="img/testimonial-cat.jpg" cite="Cat Jaffin">
+                "I ❤️ Arts Beacon. I don’t consider myself ‘arty’ but Jena made it awesome - her vibe of relaxed,
+                cheerful guidance encouraged me to have a wonderful time."
+              </Testimonial>
             </Carousel.Item>
             <Carousel.Item>
-              <Image src="img/testimonial-kate.jpg" className="pull-left" roundedCircle />
-              <h4>
-                <em>
-                  "I absolutely recommend Arts Beacon. Jena is wonderful with children, and I will not hesitate to send
-                  my own children and clients to her!"
-                </em>
-                <span>Kate Drummond, OTR/L</span>
-              </h4>
+              <Testimonial img="img/testimonial-kate.jpg" cite="Kate Drummond, OTR/L">
+                "I absolutely recommend Arts Beacon. Jena is wonderful with children, and I will not hesitate to send
+                own children and clients to her!"
+              </Testimonial>
             </Carousel.Item>
             <Carousel.Item>
-              <Image src="img/testimonial-stacey.jpg" className="pull-left" roundedCircle />
-              <h4>
-                <em>
-                  "My 50th birthday party at Arts Beacon was the best! Jena’s easygoing style of teaching made everyone
-                  feel comfortable right from the start."
-                </em>
-                <span>Stacey Beth Shulman</span>
-              </h4>
+              <Testimonial img="img/testimonial-stacey.jpg" cite="Stacey Beth Shulman">
+                "My 50th birthday party at Arts Beacon was the best! Jena’s easygoing style of teaching made everyone
+                feel comfortable right from the start."
+              </Testimonial>
             </Carousel.Item>
           </Carousel>
         </Container>

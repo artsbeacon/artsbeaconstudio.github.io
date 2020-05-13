@@ -140,25 +140,29 @@ display: inline-block; */
     height: 100%;
     margin-bottom: 10px;
   }
-  .carousel-control.right,
-  .carousel-control.left {
+  .carousel-control-prev,
+  .carousel-control-next {
     background-image: none;
     color: #d645d2;
   }
   .carousel-indicators li {
-    border-color: #d645d2;
+    border: 1px solid #d645d2;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
   }
   .carousel-indicators li.active {
     background-color: #d645d2;
   }
-  .item h4 {
+  .carousel-item h4 {
     font-size: 22px;
     line-height: 1.375em;
     font-weight: 400;
     font-style: italic;
     margin: 30px 0 90px 0;
   }
-  .item span {
+  .carousel-item span {
     font-style: normal;
   }
   .panel {
@@ -214,7 +218,9 @@ display: inline-block; */
     -webkit-animation-duration: 1s;
     visibility: visible;
   }
-
+  .announcement {
+    padding: 0 0 40px 0;
+  }
   .announcement p {
     margin: 0 0 30px;
     line-height: 1.5em;
