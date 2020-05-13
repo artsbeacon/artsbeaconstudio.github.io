@@ -15,11 +15,13 @@ const artsbeacon = css`
     color: #fff;
     background-color: #de02d8;
     border-color: #de02d8;
-    font-size: 1.1rem;
   }
   .btn-primary:hover {
     background-color: #4f0294;
     border-color: #4f0294;
+  }
+  .btn-lg {
+    font-size: 1.1rem;
   }
 
   body {
@@ -219,7 +221,9 @@ display: inline-block; */
     visibility: visible;
   }
   .announcement {
-    padding: 0 0 40px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 40px;
   }
   .announcement p {
     margin: 0 0 30px;
