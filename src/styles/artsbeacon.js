@@ -45,75 +45,6 @@ const artsbeacon = css`
     color: #303030;
     font-weight: 400;
   }
-  .jumbotron {
-    padding: 150px 25px;
-    padding-bottom: 10px;
-    padding-bottom: 200px;
-  }
-
-  .jumbotron.hands {
-    background-color: #fff;
-    color: #fff;
-    background-image: url(img/hands.jpg);
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .jumbotron.hands h1 {
-    background-color: #de02d8;
-    display: inline-block;
-  }
-  .jumbotron.hands .info p {
-    background-color: rgba(214, 69, 210, 0.7);
-  }
-
-  .jumbotron.wall {
-    background-color: #fff;
-    color: #fff;
-    background-image: url(img/wall.jpg);
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .jumbotron.wall h1 {
-    background-color: #de02d8;
-    display: inline-block;
-  }
-  .jumbotron.wall .info p {
-    background-color: rgba(214, 69, 210, 0.7);
-  }
-
-  .jumbotron.fuji {
-    background-color: #fff;
-    color: #000;
-    background-image: url(img/fuji.jpg);
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .jumbotron.fuji p {
-    font-weight: 400;
-  }
-
-  .jumbotron h1 {
-    /* background-color: #de02d8;
-display: inline-block; */
-    padding: 2px 15px;
-  }
-  .jumbotron p {
-    font-size: 26px;
-    margin: 40px auto;
-  }
-  .jumbotron .info p {
-    /* background-color: rgba(214, 69, 210, 0.7);  */
-    display: inline;
-    padding: 7px 10px;
-  }
-  .jumbotron img {
-    display: none;
-    width: 300px;
-    margin-bottom: 40px;
-  }
   .container-fluid {
     padding: 60px 50px;
   }
@@ -220,16 +151,6 @@ display: inline-block; */
     -webkit-animation-duration: 1s;
     visibility: visible;
   }
-  .announcement {
-    padding: 15px;
-    border: 1px solid #ccc;
-    margin-bottom: 40px;
-  }
-  .announcement p {
-    margin: 0 0 30px;
-    line-height: 1.5em;
-    font-size: 22px;
-  }
 
   @keyframes slide {
     0% {
@@ -250,10 +171,6 @@ display: inline-block; */
       opacity: 1;
       -webkit-transform: translateY(0%);
     }
-  }
-
-  #classListDropdown {
-    display: none;
   }
 
   @media screen and (max-width: 768px) {

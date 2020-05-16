@@ -12,7 +12,8 @@ const Testimonial = ({ children, img, cite }) => (
     <Col sm={7}>
       <h4>
         <em>{children}</em>
-        <br /><br />
+        <br />
+        <br />
         <span>{cite}</span>
       </h4>
     </Col>
