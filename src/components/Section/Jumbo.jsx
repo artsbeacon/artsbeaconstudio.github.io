@@ -23,32 +23,36 @@ const JumboStyled = styled.div`
     p {
       font-size: 26px;
       font-weight: 400;
-      margin: 40px auto;
+      margin: 0 auto 40px auto;
     }
     img {
       display: none;
     }
   }
+  @media screen and (max-width: 480px) {
+    .jumbotron h1 {
+      font-size: 54px;
+    }
+  }
 `
 
-const JumboInfo = styled.p`
+const JumboInfo = styled.div`
   display: inline;
   padding: 7px 10px;
 `
-// TODO fix the button text and link
+
 export default class Jumbo extends Component {
   render() {
     const { doc } = this.props
+    const linkText = doc.data.section_image.alt !== '' ? doc.data.section_image.alt : 'See Our Classes'
     return (
       <JumboStyled>
         <Jumbotron id="homePage" style={{ backgroundImage: `url(${doc.data.section_image.url})` }}>
           <h1>{doc.data.title.text}</h1>
           <JumboInfo dangerouslySetInnerHTML={{ __html: doc.data.body.html }} />
-          <p>
-            <Button size="lg" href="#classes">
-              ONLINE SUMMER CLASSES
-            </Button>
-          </p>
+          <Button size="lg" href="#classes">
+            {linkText}
+          </Button>
         </Jumbotron>
       </JumboStyled>
     )

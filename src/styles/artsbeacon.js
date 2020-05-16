@@ -73,31 +73,6 @@ const artsbeacon = css`
     height: 100%;
     margin-bottom: 10px;
   }
-  .carousel-control-prev,
-  .carousel-control-next {
-    background-image: none;
-    color: #d645d2;
-  }
-  .carousel-indicators li {
-    border: 1px solid #d645d2;
-    background-color: transparent;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-  }
-  .carousel-indicators li.active {
-    background-color: #d645d2;
-  }
-  .carousel-item h4 {
-    font-size: 22px;
-    line-height: 1.375em;
-    font-weight: 400;
-    font-style: italic;
-    margin: 30px 0 90px 0;
-  }
-  .carousel-item span {
-    font-style: normal;
-  }
   .panel {
     border: 1px solid #d645d2;
     border-radius: 0 !important;
@@ -172,7 +147,6 @@ const artsbeacon = css`
       -webkit-transform: translateY(0%);
     }
   }
-
   @media screen and (max-width: 768px) {
     .col-sm-4 {
       text-align: center;
@@ -189,57 +163,10 @@ const artsbeacon = css`
       display: block;
     }
   }
-
   @media screen and (max-width: 480px) {
-    .jumbotron h1 {
-      font-size: 54px;
-    }
-    .logo {
-      font-size: 150px;
-    }
     #facebook-frame {
       display: none;
     }
-  }
-  /* cards */
-  .card {
-    background-color: #ffffff;
-    padding: 0;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-  }
-  .card:hover {
-    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
-      0 8px 10px -5px rgba(0, 0, 0, 0.3);
-    color: black;
-  }
-  .card img {
-    width: 100%;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-  }
-  .card h4 {
-    margin: 20px;
-  }
-  .card p {
-    margin: 20px 0;
-    opacity: 0.65;
-  }
-  .card p:last-child {
-    padding-bottom: 20px;
-    opacity: 1;
-  }
-
-  #registerForm {
-    margin-top: 50px;
-  }
-
-  .nav-pills > li.active > a,
-  .nav-pills > li.active > a:focus,
-  .nav-pills > li.active > a:hover {
-    background-color: #d645d2;
   }
 `
 

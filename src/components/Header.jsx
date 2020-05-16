@@ -16,22 +16,27 @@ const StyledHeader = styled.nav`
     font-family: Montserrat, sans-serif;
     padding-top: 0;
     padding-bottom: 0;
+    .nav-item a {
+      color: #fff !important;
+      padding: 20px 0.7rem;
+    }
+    .navbar-brand {
+      color: #fff !important;
+      font-size: 1rem;
+      padding: 0;
+      img {
+        width: 110px;
+        background: white;
+        padding: 10px;
+        margin-top: -15px;
+        display: none;
+      }
+    }
   }
-  .navbar .nav-item a {
-    color: #fff !important;
-    padding: 20px 0.7rem;
-  }
-  .navbar .navbar-brand {
-    color: #fff !important;
-    font-size: 1rem;
-    padding: 0;
-  }
-  .navbar-brand img {
-    width: 110px;
-    background: white;
-    padding: 10px;
-    margin-top: -15px;
-    display: none;
+  .nav-pills > li.active > a,
+  .nav-pills > li.active > a:focus,
+  .nav-pills > li.active > a:hover {
+    background-color: #d645d2;
   }
   .navbar-nav .nav-item a:hover,
   .navbar-nav .nav-item a.active {
@@ -43,7 +48,14 @@ const StyledHeader = styled.nav`
     color: #fff !important;
     background: #000;
   }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
 `
+
+// TODO add the smooth scrolling
 
 class Header extends Component {
   render() {

@@ -25,17 +25,15 @@ const ProjectListing = styled.ul`
 
 const IndexWrapper = Wrapper.withComponent('main')
 
-// TODO allPrismicLayeredPage ? or prismicLayeredPage slug = homepage
-
 class Index extends Component {
   render() {
     const {
-      data: { posts, projects, layeredHome },
+      data: { posts, projects, homepage },
     } = this.props
     return (
       <Layout>
         <Header />
-        <Section sections={layeredHome.nodes[0].data.page_sections} />
+        <Section sections={homepage.data.page_sections} />
         <IndexWrapper id={website.skipNavId} style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
           <Title style={{ marginTop: '4rem' }}>Recent posts</Title>
           <Listing posts={posts.nodes} />
@@ -57,8 +55,12 @@ export default Index
 
 Index.propTypes = {
   data: PropTypes.shape({
-    layeredHome: PropTypes.shape({
-      nodes: PropTypes.array.isRequired,
+    homepage: PropTypes.shape({
+      data: PropTypes.shape({
+        page_sections: PropTypes.shape({
+          text: PropTypes.array.isRequired,
+        }),
+      }),
     }),
     posts: PropTypes.shape({
       nodes: PropTypes.array.isRequired,
@@ -71,68 +73,66 @@ Index.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    layeredHome: allPrismicLayeredPage(filter: { uid: { eq: "homepage" } }) {
-      nodes {
-        uid
-        data {
-          title {
-            text
-          }
-          date(formatString: "MM.DD.YYYY")
-          description
-          page_sections {
-            page_section {
-              uid
-              document {
-                ... on PrismicPageSection {
-                  data {
-                    title {
-                      text
-                    }
-                    body {
-                      html
-                    }
-                    section_image {
-                      url
-                      alt
-                    }
-                    body1 {
-                      items {
-                        gallery_image {
-                          url
-                          alt
-                        }
-                        image_captions {
-                          text
-                        }
-                      }
-                    }
+    homepage: prismicLayeredPage(uid: { eq: "homepage" }) {
+      uid
+      data {
+        title {
+          text
+        }
+        date(formatString: "MM.DD.YYYY")
+        description
+        page_sections {
+          page_section {
+            uid
+            document {
+              ... on PrismicPageSection {
+                data {
+                  title {
+                    text
                   }
-                  uid
-                }
-                ... on PrismicCardSection {
-                  uid
-                  data {
-                    title {
-                      text
-                    }
-                    cards {
-                      title {
-                        text
-                      }
-                      image {
+                  body {
+                    html
+                  }
+                  section_image {
+                    url
+                    alt
+                  }
+                  body1 {
+                    items {
+                      gallery_image {
                         url
                         alt
                       }
-                      description {
+                      image_captions {
                         text
                       }
-                      button_text {
-                        text
-                      }
-                      link {
-                        url
-                      }
+                    }
+                  }
+                }
+                uid
+              }
+              ... on PrismicCardSection {
+                uid
+                data {
+                  title {
+                    text
+                  }
+                  cards {
+                    title {
+                      text
+                    }
+                    image {
+                      url
+                      alt
+                    }
+                    description {
+                      text
+                    }
+                    button_text {
+                      text
+                    }
+                    link {
+                      url
                     }
                   }
                 }

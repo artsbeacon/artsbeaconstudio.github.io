@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Container, Row, Col, Image } from 'react-bootstrap'
 
-// TODO fix the link
-// TODO testimonials
-
 export default class ImageText extends Component {
   render() {
     const { doc } = this.props
@@ -16,7 +13,7 @@ export default class ImageText extends Component {
             <div dangerouslySetInnerHTML={{ __html: doc.data.body.html }} />
           </Col>
           <Col sm={{ span: 3, offset: 1 }}>
-            <Image src="img/jenaheadshot0.5x.jpg" alt="Jena Jones" roundedCircle />
+            <Image src={doc.data.section_image.url} alt={doc.data.section_image.alt} roundedCircle />
           </Col>
         </Row>
       </Container>

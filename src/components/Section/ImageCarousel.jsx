@@ -1,8 +1,27 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Container, Row, Col, Carousel, Image } from 'react-bootstrap'
+import styled from '@emotion/styled'
 
-// TODO allow for captions?
+const StyledCarousel = styled.div`
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-image: none;
+    color: #d645d2;
+  }
+  .carousel-indicators li {
+    border: 1px solid #d645d2;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    &.active {
+      background-color: #d645d2;
+    }
+  }
+`
+
+// WANT: allow for carousel image captions
 
 export default class ImageCarousel extends Component {
   render() {
@@ -16,13 +35,15 @@ export default class ImageCarousel extends Component {
             <div dangerouslySetInnerHTML={{ __html: doc.data.body.html }} />
           </Col>
           <Col sm="5">
-            <Carousel>
-              {items.map((item) => (
-                <Carousel.Item>
-                  <Image src={item.gallery_image.url} alt={item.gallery_image.alt} />
-                </Carousel.Item>
-              ))}
-            </Carousel>
+            <StyledCarousel>
+              <Carousel>
+                {items.map((item) => (
+                  <Carousel.Item key={item.gallery_image.url}>
+                    <Image src={item.gallery_image.url} alt={item.gallery_image.alt} />
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+            </StyledCarousel>
           </Col>
         </Row>
       </Container>

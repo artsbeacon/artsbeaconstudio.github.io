@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import styled from '@emotion/styled'
 
-// TODO collapsible on the announcement
+// TODO put all content in cms
+// TODO collapsible announcement
 /*
 // TODO fix this to use state correctly
 // const [open, setOpen] = useState(false)

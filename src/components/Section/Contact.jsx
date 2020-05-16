@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Container, Row, Col } from 'react-bootstrap'
 import ContactForm from './ContactForm'
+import InstagramEmbed from 'react-instagram-embed'
 
 // TODO social feeds
 
@@ -19,9 +20,22 @@ export default class Contact extends Component {
             <ContactForm />
           </Col>
         </Row>
-        <h2 className="text-center">CONNECT WITH US ON SOCIAL MEDIA</h2>
+        <h2 className="text-center">Connect with us on social media</h2>
         <Row>
-          <Col sm={{ span: 4, offset: 1 }}>Instagram posts here</Col>
+          <Col sm={{ span: 4, offset: 1 }}>
+            <InstagramEmbed
+              url="https://www.instagram.com/p/Bwp4cljAvAs/"
+              maxWidth={320}
+              hideCaption={true}
+              containerTagName="div"
+              injectScript
+              protocol=""
+              onLoading={() => {}}
+              onSuccess={() => {}}
+              onAfterRender={() => {}}
+              onFailure={() => {}}
+            />
+          </Col>
           <Col sm={{ span: 4, offset: 2 }}>Facebook posts here</Col>
         </Row>
       </Container>

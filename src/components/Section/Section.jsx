@@ -21,7 +21,7 @@ const Components = {
 }
 
 // TODO pass the component type down as a field in the cms
-// TODO see if the doc path can be made better
+// WANT: see if the doc path can be made better
 
 export default class Section extends Component {
   render() {
@@ -50,5 +50,5 @@ export default class Section extends Component {
 }
 
 Section.propTypes = {
-  sections: PropTypes.object.isRequired,
+  sections: PropTypes.array.isRequired,
 }
