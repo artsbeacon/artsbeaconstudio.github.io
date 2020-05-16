@@ -39,7 +39,7 @@ export default class Contact extends Component {
               title="facebookPost"
               src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fartsbeacon%2Fposts%2F3268785126680066&width=350"
               width="350"
-              height="802"
+              height="650"
               style={{ border: 'none', overflow: 'hidden' }}
               scrolling="no"
               frameBorder="0"
