@@ -44,20 +44,25 @@ export default class Cards extends Component {
       <StyledCards>
         <Container fluid>
           <Row>
-            {doc.data.cards.map((c) => (
-              <Col sm={colSmSize} key={c.title.text}>
-                <Card>
-                  <Card.Img variant="top" src={c.image.url} />
-                  <Card.Body>
-                    <Card.Title>{c.title.text}</Card.Title>
-                    <Card.Text>{c.description.text}</Card.Text>
-                    <Button href="#classes" size="lg">
-                      {c.button_text.text}
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
+            {doc.data.cards.map((c) => {
+              const buttonLink = c.link.url.indexOf('/') > 0 ? c.link.url : `#${c.link.url.substring(1)}`
+              return (
+                <Col sm={colSmSize} key={c.title.text}>
+                  <Card>
+                    <Card.Img variant="top" src={c.image.url} />
+                    <Card.Body>
+                      <Card.Title>{c.title.text}</Card.Title>
+                      <Card.Text>
+                        <span dangerouslySetInnerHTML={{ __html: c.description.html }} />
+                      </Card.Text>
+                      <Button href={buttonLink} size="lg">
+                        {c.button_text.text}
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              )
+            })}
           </Row>
         </Container>
       </StyledCards>

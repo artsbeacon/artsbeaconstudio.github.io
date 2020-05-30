@@ -51,6 +51,7 @@ export const pageQuery = graphql`
                   title {
                     text
                   }
+                  section_type
                   body {
                     html
                   }
@@ -87,7 +88,7 @@ export const pageQuery = graphql`
                       alt
                     }
                     description {
-                      text
+                      html
                     }
                     button_text {
                       text

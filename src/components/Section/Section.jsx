@@ -10,17 +10,16 @@ import Testimonials from './Testimonials'
 import Contact from './Contact'
 
 const Components = {
-  banner: Jumbo,
-  cards: Cards,
-  imageText: ImageText,
-  studio: ImageCarousel,
-  signup: Signup,
-  classes: Classes,
-  testimonials: Testimonials,
-  contact: Contact,
+  Cards,
+  ImageCarousel,
+  Banner: Jumbo,
+  Testimonials,
+  ImageAndText: ImageText,
+  MailingListForm: Signup,
+  TextFullWidth: Classes,
+  ContactForm: Contact,
 }
 
-// TODO pass the component type down as a field in the cms
 // WANT: see if the doc path can be made better
 
 export default class Section extends Component {
@@ -30,14 +29,12 @@ export default class Section extends Component {
       <div className="section-wrapper">
         {sections.map((section) => {
           const doc = section.page_section.document[0]
-          let cType = doc.uid
-          if (doc.uid === 'class-types') {
-            cType = 'cards'
-          } else if (doc.uid === 'mailing-list') {
-            cType = 'signup'
+          let cType = String(doc.data.section_type).replace(/ /g, '')
+          if (doc.__typename === 'PrismicCardSection') {
+            cType = 'Cards'
           }
           if (typeof Components[cType] === 'undefined') {
-            cType = 'imageText'
+            cType = 'ImageAndText'
           }
           return React.createElement(Components[cType], {
             key: doc.uid,
