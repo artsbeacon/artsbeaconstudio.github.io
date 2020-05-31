@@ -46,8 +46,9 @@ export default class Cards extends Component {
           <Row>
             {doc.data.cards.map((c) => {
               const buttonLink = c.link.url.indexOf('/') > 0 ? c.link.url : `#${c.link.url.substring(1)}`
+              const r = Math.random() * 1000
               return (
-                <Col sm={colSmSize} key={c.title.text}>
+                <Col sm={colSmSize} key={r}>
                   <Card>
                     <Card.Img variant="top" src={c.image.url} />
                     <Card.Body>

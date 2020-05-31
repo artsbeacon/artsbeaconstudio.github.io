@@ -24,9 +24,7 @@ Index.propTypes = {
   data: PropTypes.shape({
     homepage: PropTypes.shape({
       data: PropTypes.shape({
-        page_sections: PropTypes.shape({
-          text: PropTypes.array.isRequired,
-        }),
+        page_sections: PropTypes.array.isRequired,
       }),
     }),
   }).isRequired,
