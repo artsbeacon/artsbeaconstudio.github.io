@@ -93,23 +93,28 @@ class Header extends Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
               <Nav>
-                <Nav.Item>
-                  <Nav.Link href="#studio" eventKey={1} onClick={this.scrollClick}>
+              <Nav.Item>
+                  <Nav.Link href="/#studio" eventKey={1} onClick={this.scrollClick}>
                     THE STUDIO
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="#classes" eventKey={2} onClick={this.scrollClick}>
-                    CURRENT CLASSES
+                  <Nav.Link href="/#gallery" eventKey={2} onClick={this.scrollClick}>
+                    THE GALLERY
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="#about-jena" eventKey={3} onClick={this.scrollClick}>
-                    ABOUT JENA
+                  <Nav.Link href="/#artists" eventKey={3} onClick={this.scrollClick}>
+                    RESIDENT ARTISTS
+                  </Nav.Link>
+                </Nav.Item>                
+                <Nav.Item>
+                  <Nav.Link href="/classes" eventKey={4} onClick={this.scrollClick}>
+                    CLASSES
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="#contact" eventKey={4} onClick={this.scrollClick}>
+                  <Nav.Link href="#contact" eventKey={5} onClick={this.scrollClick}>
                     CONTACT US
                   </Nav.Link>
                 </Nav.Item>

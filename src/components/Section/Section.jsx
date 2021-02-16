@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Cards from './Cards'
+import ClassList from './ClassList'
 import ImageText from './ImageText'
 import ImageCarousel from './ImageCarousel'
 import Jumbo from './Jumbo'
@@ -11,6 +12,7 @@ import Contact from './Contact'
 
 const Components = {
   Cards,
+  ClassList,
   ImageCarousel,
   Banner: Jumbo,
   Testimonials,
@@ -28,10 +30,20 @@ export default class Section extends Component {
     return (
       <div className="section-wrapper">
         {sections.map((section) => {
+          if (section.page_section === null) {
+            return ''
+          }
+          if (typeof section.page_section === 'undefined' || typeof section.page_section.document === 'undefined') {
+            return ''
+          }
           const doc = section.page_section.document[0]
-          let cType = String(doc.data.section_type).replace(/ /g, '')
+          const sectionType = typeof doc.data !== 'undefined' ? doc.data.section_type : ''
+          let cType = String(sectionType).replace(/ /g, '')
           if (doc.__typename === 'PrismicCardSection') {
             cType = 'Cards'
+          }
+          if (doc.__typename === 'PrismicClassList') {
+            cType = 'ClassList'
           }
           if (typeof Components[cType] === 'undefined') {
             cType = 'ImageAndText'

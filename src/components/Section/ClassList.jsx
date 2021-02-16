@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Container, Row, Col, Button, Card } from 'react-bootstrap'
+import { Container, Row, Col, Button, Card, Modal } from 'react-bootstrap'
+import ClassCard from './ClassCard'
 import styled from '@emotion/styled'
 
 const StyledCards = styled.div`
@@ -20,9 +21,14 @@ const StyledCards = styled.div`
     h4 {
       margin: 20px;
     }
+    .h5 {
+      color: #333;
+      font-size: 1.65rem;
+    }
     p {
       margin: 20px 0;
-      opacity: 0.65;
+      opacity: 1;
+      color: #333;
     }
     p:last-child {
       padding-bottom: 20px;
@@ -36,10 +42,18 @@ const StyledCards = styled.div`
   }
 `
 
-export default class Cards extends Component {
-  render() {
-    const { doc } = this.props
+function ClassList ({ children, ...props }) {
+  // function ClassList ({ children, ...props }) {
+// export default class ClassList extends Component {
+  // render() {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    const { doc } = props
     const colSmSize = doc.data.cards.length > 4 ? 4 : Math.floor(12 / doc.data.cards.length)
+    console.log('class list!', doc.data.cards)
     return (
       <StyledCards>
         <Container fluid>
@@ -48,29 +62,17 @@ export default class Cards extends Component {
               const buttonLink = c.link.url.indexOf('/') > 0 ? c.link.url : `#${c.link.url.substring(1)}`
               const r = Math.random() * 1000
               return (
-                <Col sm={colSmSize} key={r}>
-                  <Card>
-                    <Card.Img variant="top" src={c.image.url} />
-                    <Card.Body>
-                      <Card.Title>{c.title.text}</Card.Title>
-                      <Card.Text>
-                        <span dangerouslySetInnerHTML={{ __html: c.description.html }} />
-                      </Card.Text>
-                      <Button href={buttonLink} size="lg">
-                        {c.button_text.text}
-                      </Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
+                <ClassCard c={c} colSmSize={colSmSize} />
               )
             })}
           </Row>
         </Container>
       </StyledCards>
     )
-  }
 }
 
-Cards.propTypes = {
+export default ClassList
+
+ClassList.propTypes = {
   doc: PropTypes.object.isRequired,
 }
