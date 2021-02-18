@@ -28,6 +28,7 @@ module.exports = {
   /* Plugins */
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-preload-fonts',
     'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-source-prismic',
@@ -38,21 +39,6 @@ module.exports = {
         linkResolver: () => (post) => `/${post.uid}`,
         // PrismJS highlighting for labels and slices
         htmlSerializer: () => prismicHtmlSerializer,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            subsets: [`latin`],
-          },
-          {
-            family: `Lato`,
-            subsets: [`latin`],
-          },
-        ],
       },
     },
     'gatsby-plugin-lodash',
