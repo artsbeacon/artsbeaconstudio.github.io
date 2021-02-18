@@ -50,22 +50,31 @@ function ClassCard ({ children, ...props }) {
     e.preventDefault ? e.preventDefault() : e.returnValue = false
   }
 
-  const { c, colSmSize } = props
+  const openInNewWindow = (e) => {
+    console.log('open this button link in a new window', buttonLink)
+    window.open(
+      buttonLink,
+      '_blank'
+    )
+    e.preventDefault ? e.preventDefault() : e.returnValue = false
+  }
+
+  const { c, colSmSize, classTypeClassname } = props
   const buttonLink = c.link.url.indexOf('/') > 0 ? c.link.url : `#${c.link.url.substring(1)}`
   const r = Math.random() * 1000
   return (
-    <Col sm={colSmSize} key={r}>
+    <Col className={classTypeClassname} sm={colSmSize} key={r}>
       <Card>
-        <Card.Img variant="top" src={c.image.url} />
+        <Card.Img variant="top" src={c.image.url} onClick={handleShow} />
         <Card.Body>
-          <Card.Title>{c.title.text}</Card.Title>
+          <Card.Title onClick={handleShow}>{c.title.text}</Card.Title>
           <Card.Text>
             <p><b>{c.class_type}</b> | <i>{c.class_tags}</i></p>
             <p>{c.quick_description.text}</p>
             <p><b>Cost:</b> ${c.cost}</p>
             <p><a href="javascript:return false" onClick={handleShow}>See Full Details</a></p>
           </Card.Text>
-          <Button href={buttonLink} size="lg">
+          <Button href={buttonLink} size="lg" onClick={openInNewWindow}>
             {c.button_text.text}
           </Button>
         </Card.Body>
@@ -83,7 +92,7 @@ function ClassCard ({ children, ...props }) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button href={buttonLink} variant="primary">
+          <Button href={buttonLink} variant="primary" onClick={openInNewWindow}>
             {c.button_text.text}
           </Button>
         </Modal.Footer>

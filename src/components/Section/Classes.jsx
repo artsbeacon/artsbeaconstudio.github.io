@@ -5,7 +5,6 @@ import styled from '@emotion/styled'
 
 const Announcement = styled.div`
   padding: 15px;
-  border: 1px solid #ccc;
   margin-bottom: 40px;
   p {
     margin: 0 0 30px;

@@ -16,14 +16,27 @@ const JumboStyled = styled.div`
     background-size: cover;
     text-align: center;
     h1 {
+      color: #fff;
       font-size: 63px;
       padding: 2px 15px;
-      color: #000;
+      background-color: rgba(222, 2, 216, 0.8);
+      display: inline-block;
+      padding: 2px 15px;
     }
-    p {
+    .info {
+      margin-top: 20px;
+    }
+    .info p {
+      color: #fff;
       font-size: 26px;
       font-weight: 400;
       margin: 0 auto 40px auto;
+      background-color: rgba(222, 2, 216, 0.8);
+      display: inline;
+      padding: 7px 10px;
+    }
+    .button {
+      margin-top: 60px;
     }
     img {
       display: none;
@@ -44,15 +57,20 @@ const JumboInfo = styled.div`
 export default class Jumbo extends Component {
   render() {
     const { doc } = this.props
-    const linkText = doc.data.section_image.alt !== '' ? doc.data.section_image.alt : 'See Our Classes'
     return (
       <JumboStyled>
         <Jumbotron id="homePage" style={{ backgroundImage: `url(${doc.data.section_image.url})` }}>
           <h1>{doc.data.title.text}</h1>
-          <JumboInfo dangerouslySetInnerHTML={{ __html: doc.data.body.html }} />
-          <Button size="lg" href="#classes">
-            {linkText}
-          </Button>
+          <div className="info">
+            <JumboInfo dangerouslySetInnerHTML={{ __html: doc.data.body.html }} />
+          </div>
+          {(doc.data.section_image.alt === '') ? '' : 
+          <div className="button">
+            <Button size="lg" href="/classes">
+              {doc.data.section_image.alt}
+            </Button>
+          </div>
+          }
         </Jumbotron>
       </JumboStyled>
     )
