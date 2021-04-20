@@ -63,7 +63,7 @@ function ClassCard ({ children, ...props }) {
   const buttonLink = c.link.url.indexOf('/') > 0 ? c.link.url : `#${c.link.url.substring(1)}`
   const r = Math.random() * 1000
   return (
-    <Col className={classTypeClassname} sm={colSmSize} key={r}>
+    <Col className={classTypeClassname} sm={colSmSize} lg={4} xl={3} key={r}>
       <Card>
         <Card.Img variant="top" src={c.image.url} onClick={handleShow} />
         <Card.Body>
@@ -105,5 +105,5 @@ export default ClassCard
 
 ClassCard.propTypes = {
   c: PropTypes.object.isRequired,
-  colSmSize: PropTypes.object.isRequired,
+  colSmSize: PropTypes.number.isRequired,
 }

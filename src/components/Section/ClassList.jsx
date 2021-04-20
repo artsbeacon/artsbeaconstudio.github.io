@@ -11,7 +11,7 @@ const StyledCards = styled.div`
 function ClassList ({ children, ...props }) {
     const { doc } = props
     const allClasses = doc.data.cards
-    const colSmSize = allClasses.length > 4 ? 4 : Math.floor(12 / allClasses.length)
+    const colSmSize = allClasses.length > 4 ? 6 : Math.floor(12 / allClasses.length)
     // const classRows = allClasses
     // <p>filter: Kids Classes | Teens Classes | Adult Classes</p>
     return (
@@ -22,8 +22,9 @@ function ClassList ({ children, ...props }) {
             {doc.data.cards.map((c) => { 
               const classType = c.class_type !== null ? c.class_type : 'all' 
               const classTypeClassname = `type-` + classType
+              const r = Math.random() * 1000
               return (
-                <ClassCard c={c} colSmSize={colSmSize} classTypeClassname={classTypeClassname.toLowerCase()} />
+                <ClassCard key={r} c={c} colSmSize={colSmSize} classTypeClassname={classTypeClassname.toLowerCase()} />
               )
             })}
           </Row>
