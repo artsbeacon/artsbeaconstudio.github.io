@@ -3,7 +3,7 @@
   "description": "A typography-heavy & light-themed Gatsby Starter which uses the Headless CMS Prismic",
   "private": true,
   "license": "MIT",
-  "version": "1.2.13",
+  "version": "1.2.14",
   "author": "LekoArts <hello@lekoarts.de>",
   "scripts": {
     "help": "gatsby --help",
