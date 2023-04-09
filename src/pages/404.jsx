@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 
-import { Layout, Header, Section } from '../components'
-import { Button, Jumbotron } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
+import { Layout, Header } from '../components'
 
 const JumboStyled = styled.div`
   .jumbotron {
@@ -57,11 +56,12 @@ const JumboInfo = styled.div`
 
 class FourOhFour extends Component {
   render() {
-    const bgImgUrl = 'https://images.prismic.io/artsbeacon/3d8bda49-2dea-47c5-b365-5857dd4018bf_IMG_20190311_090336.jpg?auto=compress,format'
+    const bgImgUrl =
+      'https://images.prismic.io/artsbeacon/3d8bda49-2dea-47c5-b365-5857dd4018bf_IMG_20190311_090336.jpg?auto=compress,format'
     return (
       <Layout>
         <Header />
-        <Jumbotron id="fourOhFour" style={{ backgroundColor: `#efefef` }}>
+        <Container id="fourOhFour" style={{ backgroundColor: `#efefef` }}>
           <h1>Page Not Found</h1>
           <div className="info">
             <p>The page you requested could not be found.</p>
@@ -71,7 +71,7 @@ class FourOhFour extends Component {
               Try the homepage?
             </Button>
           </div>
-        </Jumbotron>
+        </Container>
       </Layout>
     )
   }

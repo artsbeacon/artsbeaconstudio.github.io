@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { Button, Jumbotron } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 const JumboStyled = styled.div`
   .jumbotron {
@@ -57,21 +57,23 @@ const JumboInfo = styled.div`
 export default class Jumbo extends Component {
   render() {
     const { doc } = this.props
+    const altText = doc.data.section_image.alt
+    const hasAltText = altText !== ''
     return (
       <JumboStyled>
-        <Jumbotron id="homePage" style={{ backgroundImage: `url(${doc.data.section_image.url})` }}>
+        <div className="jumbotron" id="homePage" style={{ backgroundImage: `url(${doc.data.section_image.url})` }}>
           <h1>{doc.data.title.text}</h1>
           <div className="info">
             <JumboInfo dangerouslySetInnerHTML={{ __html: doc.data.body.html }} />
           </div>
-          {(doc.data.section_image.alt === '') ? '' : 
-          <div className="button">
-            <Button size="lg" href="/classes">
-              {doc.data.section_image.alt}
-            </Button>
-          </div>
-          }
-        </Jumbotron>
+          {hasAltText && (
+            <div className="button">
+              <Button size="lg" href="/classes">
+                {altText}
+              </Button>
+            </div>
+          )}
+        </div>
       </JumboStyled>
     )
   }
