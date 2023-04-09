@@ -6,7 +6,7 @@ const prismicHtmlSerializer = require('./src/gatsby/htmlSerializer')
 
 const website = require('./config/website')
 
-const pathPrefix = website.pathPrefix
+const { pathPrefix } = website
 
 module.exports = {
   /* General Information */
@@ -28,7 +28,6 @@ module.exports = {
   /* Plugins */
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-preload-fonts',
     'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-source-prismic',
