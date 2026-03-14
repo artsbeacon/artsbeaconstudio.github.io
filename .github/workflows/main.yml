@@ -9,6 +9,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  repository_dispatch:
+    types: [ prismic_publish ]
   workflow_dispatch:
     branches: [ master ]
 
