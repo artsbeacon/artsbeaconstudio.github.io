@@ -1,35 +1,48 @@
 const _ = require('lodash')
 
-// graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
-const wrapper = (promise) =>
-  promise.then((result) => {
-    if (result.errors) {
-      throw result.errors
-    }
-    return result
-  })
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const postTemplate = require.resolve('./src/templates/post.jsx')
   const categoryTemplate = require.resolve('./src/templates/category.jsx')
 
-  const result = await wrapper(
-    graphql(`
-      {
-        allPrismicPost {
-          edges {
-            node {
-              id
-              uid
-              data {
-                categories {
-                  category {
-                    document {
-                      data {
-                        name
-                      }
+  // The Prismic content model no longer guarantees a `post` type.
+  // If that type is missing, skip creating legacy post/category pages.
+  const queryTypeResult = await graphql(`
+    {
+      __type(name: "Query") {
+        fields {
+          name
+        }
+      }
+    }
+  `)
+
+  if (queryTypeResult.errors) {
+    throw queryTypeResult.errors
+  }
+
+  const queryFields = queryTypeResult.data.__type?.fields || []
+  const hasAllPrismicPost = queryFields.some((field) => field.name === 'allPrismicPost')
+
+  if (!hasAllPrismicPost) {
+    console.warn('[gatsby-node] Skipping legacy post page generation: allPrismicPost is not in schema.')
+    return
+  }
+
+  const result = await graphql(`
+    {
+      allPrismicPost {
+        edges {
+          node {
+            id
+            uid
+            data {
+              categories {
+                category {
+                  document {
+                    data {
+                      name
                     }
                   }
                 }
@@ -38,8 +51,12 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-    `)
-  )
+    }
+  `)
+
+  if (result.errors) {
+    throw result.errors
+  }
 
   const categorySet = new Set()
   const postsList = result.data.allPrismicPost.edges

@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import { Layout, Listing, Wrapper, Title, SEO, Header } from '../components'
 import website from '../../config/website'
@@ -66,36 +65,3 @@ Category.propTypes = {
   }).isRequired,
   location: PropTypes.object.isRequired,
 }
-
-export const pageQuery = graphql`
-  query CategoryPage($category: String!) {
-    posts: allPrismicPost(
-      sort: { fields: [data___date], order: DESC }
-      filter: {
-        data: {
-          categories: { elemMatch: { category: { document: { elemMatch: { data: { name: { eq: $category } } } } } } }
-        }
-      }
-    ) {
-      totalCount
-      nodes {
-        uid
-        data {
-          title {
-            text
-          }
-          date(formatString: "DD.MM.YYYY")
-          categories {
-            category {
-              document {
-                data {
-                  name
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
