@@ -3,7 +3,7 @@
   "description": "The website for Arts Beacon Studios",
   "private": true,
   "license": "MIT",
-  "version": "1.3.36",
+  "version": "1.4.0",
   "author": "LekoArts <hello@lekoarts.de>",
   "scripts": {
     "build": "export NODE_OPTIONS=--openssl-legacy-provider; gatsby build",
@@ -83,13 +83,3 @@
     "gatsby-starter"
   ]
 }
-
-
-
-
-
-
-
-
-
-

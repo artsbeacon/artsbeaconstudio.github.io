@@ -24,18 +24,33 @@ const Headline = styled.p`
 
 const PostWrapper = Wrapper.withComponent('main')
 
-const Post = ({ data: { prismicPost, posts }, location }) => {
-  const { data } = prismicPost
+const Post = ({ data, location }) => {
+  const prismicPost = data?.prismicPost
+  const posts = data?.posts
+
+  if (!prismicPost) {
+    return (
+      <Layout>
+        <SEO title={`Post unavailable | ${website.titleAlt}`} pathname={location.pathname} />
+        <Header />
+        <PostWrapper id={website.skipNavId}>
+          <Title style={{ marginTop: '4rem' }}>Post unavailable</Title>
+        </PostWrapper>
+      </Layout>
+    )
+  }
+
+  const { data: postData } = prismicPost
   let categories = false
-  if (data.categories[0].category) {
-    categories = data.categories.map((c) => c.category.document[0].data.name)
+  if (postData.categories && postData.categories[0] && postData.categories[0].category) {
+    categories = postData.categories.map((c) => c.category.document[0].data.name)
   }
   return (
     <Layout customSEO>
       <SEO
-        title={`${data.title.text} | ${website.titleAlt}`}
+        title={`${postData.title.text} | ${website.titleAlt}`}
         pathname={location.pathname}
-        desc={data.description}
+        desc={postData.description}
         node={prismicPost}
         article
       />
@@ -43,15 +58,15 @@ const Post = ({ data: { prismicPost, posts }, location }) => {
       <Hero>
         <Wrapper>
           <Headline>
-            {data.date} — {categories && <Categories categories={categories} />}
+            {postData.date} — {categories && <Categories categories={categories} />}
           </Headline>
-          <h1>{data.title.text}</h1>
+          <h1>{postData.title.text}</h1>
         </Wrapper>
       </Hero>
       <PostWrapper id={website.skipNavId}>
-        <SliceZone allSlices={data.body} />
+        <SliceZone allSlices={postData.body} />
         <Title style={{ marginTop: '4rem' }}>Recent posts</Title>
-        <Listing posts={posts.nodes} />
+        <Listing posts={posts?.nodes || []} />
       </PostWrapper>
     </Layout>
   )
@@ -61,10 +76,14 @@ export default Post
 
 Post.propTypes = {
   data: PropTypes.shape({
-    prismicPost: PropTypes.object.isRequired,
+    prismicPost: PropTypes.object,
     posts: PropTypes.shape({
-      nodes: PropTypes.array.isRequired,
+      nodes: PropTypes.array,
     }),
-  }).isRequired,
+  }),
   location: PropTypes.object.isRequired,
+}
+
+Post.defaultProps = {
+  data: null,
 }
