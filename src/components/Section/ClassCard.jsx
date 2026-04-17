@@ -51,50 +51,57 @@ function ClassCard ({ children, ...props }) {
   }
 
   const openInNewWindow = (e) => {
-    console.log('open this button link in a new window', buttonLink)
-    window.open(
-      buttonLink,
-      '_blank'
-    )
+    if (buttonLink && buttonLink !== '#') {
+      window.open(
+        buttonLink,
+        '_blank'
+      )
+    }
     e.preventDefault ? e.preventDefault() : e.returnValue = false
   }
 
   const { c, colSmSize, classTypeClassname } = props
-  const buttonLink = c.link.url.indexOf('/') > 0 ? c.link.url : `#${c.link.url.substring(1)}`
+  const buttonLink = c.link && c.link.url ? (c.link.url.indexOf('/') > 0 ? c.link.url : `#${c.link.url.substring(1)}`) : '#'
   const r = Math.random() * 1000
   return (
     <Col className={classTypeClassname} sm={colSmSize} lg={4} xl={3} key={r}>
       <Card>
-        <Card.Img variant="top" src={c.image.url} onClick={handleShow} />
+        {c.image && c.image.url && <Card.Img variant="top" src={c.image.url} onClick={handleShow} />}
         <Card.Body>
-          <Card.Title onClick={handleShow}>{c.title.text}</Card.Title>
+          <Card.Title onClick={handleShow}>{c.title && c.title.text ? c.title.text : 'Untitled'}</Card.Title>
           <Card.Text>
-            <p><b>{c.class_type}</b> | <i>{c.class_tags}</i></p>
-            <p>{c.quick_description.text}</p>
-            <p><b>Cost:</b> ${c.cost}</p>
+            <p><b>{c.class_type || 'General'}</b> | <i>{c.class_tags || ''}</i></p>
+            <p>{c.quick_description && c.quick_description.text ? c.quick_description.text : ''}</p>
+            <p><b>Cost:</b> ${c.cost || 'TBD'}</p>
             <p><a href="javascript:return false" onClick={handleShow}>See Full Details</a></p>
           </Card.Text>
-          <Button href={buttonLink} size="lg" onClick={openInNewWindow}>
-            {c.button_text.text}
-          </Button>
+          {c.button_text && c.button_text.text && (
+            <Button href={buttonLink} size="lg" onClick={openInNewWindow}>
+              {c.button_text.text}
+            </Button>
+          )}
         </Card.Body>
       </Card>
       <Modal show={show} onHide={handleClose} size="lg" centered>
         <Modal.Header closeButton>
-          <Modal.Title>{c.title.text}</Modal.Title>
+          <Modal.Title>{c.title && c.title.text ? c.title.text : 'Untitled'}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <span dangerouslySetInnerHTML={{ __html: c.description.html }} />
+          {c.description && c.description.html && (
+            <span dangerouslySetInnerHTML={{ __html: c.description.html }} />
+          )}
         </Modal.Body>
 
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button href={buttonLink} variant="primary" onClick={openInNewWindow}>
-            {c.button_text.text}
-          </Button>
+          {c.button_text && c.button_text.text && (
+            <Button href={buttonLink} variant="primary" onClick={openInNewWindow}>
+              {c.button_text.text}
+            </Button>
+          )}
         </Modal.Footer>
       </Modal>
     </Col>
